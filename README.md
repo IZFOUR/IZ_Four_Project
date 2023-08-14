@@ -8,11 +8,9 @@
 7. theme의 parent(material -> AppCompat으로 수정, 내용추가)
  
 [FEAT] : ⚙️ 08.14(17:20)
-
 1.SignInActivity -> SignUp,Main 으로 이동하는 버튼만 추가
 2.MyPageDetailActivity 추가
 
 [FEAT] : ⚙️ 08.14(21:00)
-
 1.activity_main.xml 디자인 초안
 2.activity_main.xml 이미지 추가(해상도별)
