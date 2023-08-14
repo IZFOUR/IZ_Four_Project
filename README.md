@@ -17,3 +17,4 @@
 
 [FEAT] : ⚙️ 08.15(06:15)
 1.MyAbility 관련 Activitiy, xml 기본 초안
+2.MyPage관련 Activity, xml 기본 초안
