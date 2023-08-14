@@ -6,6 +6,6 @@ import android.os.Bundle
 class MyAbilityDetail : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_ability_detail)
+        setContentView(R.layout.activity_myabilitydetail)
     }
 }
