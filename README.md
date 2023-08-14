@@ -12,3 +12,4 @@
 [FEAT] : ⚙️ 08.14(21:00)
 1.activity_main.xml 디자인 초안
 2.activity_main.xml 이미지 추가(해상도별)
+
