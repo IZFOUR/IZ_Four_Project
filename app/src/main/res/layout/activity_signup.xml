@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="210dp" />
+
+    <TextView
+        android:id="@+id/suIdTextView"
+        style="@style/textview1"
+        android:text="@string/id"
+        android:layout_marginHorizontal="25dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/suIdEditView"
+            style="@style/edittext1"
+            android:layout_marginHorizontal="20dp"
+            android:hint="@string/inputid"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/suIdTextView" />
+
+        <Button
+            android:id="@+id/btncheck"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/check"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/suNameTextView"
+        style="@style/textview1"
+        android:text="@string/name"
+        android:layout_marginHorizontal="25dp"
+        />
+    <EditText
+        android:id="@+id/suNameEditView"
+        style="@style/edittext1"
+        android:hint="@string/inputname"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suNameTextView" />
+
+    <TextView
+        android:id="@+id/suPwTextView"
+        style="@style/textview1"
+        android:text="@string/psw"
+        android:layout_marginHorizontal="25dp"
+        />
+    <EditText
+        android:id="@+id/suPwEditView"
+        style="@style/edittext1"
+        android:hint="@string/inputpsw"
+        android:inputType="textPassword"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suPwTextView" />
+
+    <TextView
+        android:id="@+id/suAgeTextView"
+        style="@style/textview1"
+        android:text="@string/age"
+        android:layout_marginHorizontal="25dp"
+        />
+    <EditText
+        android:id="@+id/suAgeEditView"
+        style="@style/edittext1"
+        android:hint="@string/inputage"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suAgeTextView"
+        />
+
+    <TextView
+        android:id="@+id/suMbtiTextView"
+        style="@style/textview1"
+        android:text="@string/mbti"
+        android:layout_marginHorizontal="25dp"
+        />
+
+    <EditText
+        android:id="@+id/suMbtiEditView"
+        style="@style/edittext1"
+        android:hint="@string/inputmbti"
+        android:inputType="text"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suMbtiTextView"
+        />
+
+    <Button
+        android:id="@+id/subtnjoin"
+        style="@style/edittext1"
+        android:text="@string/signup"
+        android:layout_marginHorizontal="25dp"
+        />
+
+</LinearLayout>
