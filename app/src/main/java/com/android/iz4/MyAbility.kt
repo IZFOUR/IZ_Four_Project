@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 
 // 조병현 형님: MyTeamPage -> MyAbility로 액티비티 이름 변경하였습니다.
-// Theme에서 Parent부분 Meterial -> AppCompat 변경해서 액션바랑 기타 버튼들 색상이 변경되어있을겁니다.
+// Theme에서 Parent부분 Material3 -> AppCompat 변경해서 액션바랑 기타 버튼들 색상이 변경되어있을겁니다.
 class MyAbility : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
