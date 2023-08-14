@@ -14,3 +14,5 @@
 [FEAT] : ⚙️ 08.14(21:00)
 1.activity_main.xml 디자인 초안
 2.activity_main.xml 이미지 추가(해상도별)
+[FEAT] : ⚙️ 08.15(06:15)
+1.MyAbility 관련 Activitiy, xml 기본 초안
