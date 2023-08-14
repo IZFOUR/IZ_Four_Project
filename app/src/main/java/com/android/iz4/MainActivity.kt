@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnpage = findViewById<Button>(R.id.mbtnpage)
-        val btnteam = findViewById<Button>(R.id.mbtnteam)
+        val btnteam = findViewById<Button>(R.id.mbtnablility)
 
         btnpage.setOnClickListener {
             val intent = Intent(this, MyPage::class.java )
