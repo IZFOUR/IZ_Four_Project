@@ -23,3 +23,6 @@
 MainActivity
 1. 멤버추가 기능( 기존에 있던 이미지의 외각선 및 기타 옵션들 유지하면서 추가// xml연동)
 2. 자잘한 xml수정
+3.MainActivity에서 다른 액티비티로 넘어갈때 모두 적용
+4.OtherPage -> Friend 액티비티 수정
+5.FriendEditActivity 추가
