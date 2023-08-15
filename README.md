@@ -18,3 +18,7 @@
 [FEAT] : ⚙️ 08.15(06:15)
 1.MyAbility 관련 Activitiy, xml 기본 초안
 2.MyPage관련 Activity, xml 기본 초안
+
+[FEAT] : ⚙️ 08.15(10:37)
+1. 멤버추가 기능( 기존에 있던 이미지의 외각선 및 기타 옵션들 유지하면서 추가// xml연동)
+2. 자잘한 xml수정
