@@ -47,3 +47,12 @@ edittext_selector.xml
 [FEAT] : ⚙️ 8.16 pm5.32
 MyAbility : 페이지 레이아웃 추가. 이후 각 프로젝트로 분산 및 ProgressBar 값 불러오는 기능 구현 필요
 MyAbilityDetail : 팀A 프로젝트 레이아웃 추가. DetailNotepad 부분에 스크롤 기능 추가 및 텍스트 추가 기능 구현필요
+
+[FEAT] : ⚙️ 8.16 pm.5:30
+activity_friendedit.xml
+1.디자인초안
+2.뒤로가기 버튼
+
+[FEAT] : ⚙️ MainActivity pm10:30
+1. 데이터가 있는 4종류의 이미지버튼과
+2. add버튼으로 추가되는 버튼 두종류 합침
