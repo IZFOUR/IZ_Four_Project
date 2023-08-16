@@ -26,3 +26,8 @@ MainActivity
 3.MainActivity에서 다른 액티비티로 넘어갈때 모두 적용
 4.OtherPage -> Friend 액티비티 수정
 5.FriendEditActivity 추가
+
+[FEAT] : ⚙️8.16(15:12)
+SighInActivity
+1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
+2.이미지 추가
