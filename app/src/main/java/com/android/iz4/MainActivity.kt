@@ -15,47 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val mainmember: MutableList<MemberManager> = mutableListOf(
-//            MemberManager("가", "a", ""),
-//            MemberManager("나", "b", ""),
-//            MemberManager("다", "c", ""),
-//            MemberManager("라", "d", ""),
-//            MemberManager("마", "e", ""),
-//        )
-//        for (member in mainmember){
-//            Members.addmembers(member)
-//        }
-//        val imgbtn1 = findViewById<ImageButton>(R.id.mimgbtn1)
-//        val imgbtn2 = findViewById<ImageButton>(R.id.mimgbtn2)
-//        val imgbtn3 = findViewById<ImageButton>(R.id.mimgbtn3)
-//        val imgbtn4 = findViewById<ImageButton>(R.id.mimgbtn4)
-//
-//        imgbtn1.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn2.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn3.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn4.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-
-        val imgBtn= listOf(
-            R.id.mimgbtn1,
-            R.id.mimgbtn2,
-            R.id.mimgbtn3,
-            R.id.mimgbtn4,
+        val imgBtnList = mutableListOf<ImageButton>(
+            findViewById(R.id.mimgbtn1),
+            findViewById(R.id.mimgbtn2),
+            findViewById(R.id.mimgbtn3),
+            findViewById(R.id.mimgbtn4),
         )
-        for(imgbtn in imgBtn){
-            val num = findViewById<ImageButton>(imgbtn)
-            num.setOnClickListener {
-                startActivity(Intent(this, FriendEdit::class.java))
-                overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
-            }
-        }
+        addbtnList(imgBtnList)
 
         val imgadd = findViewById<LinearLayout>(R.id.maddimg)
         val addmemberbtn = findViewById<FloatingActionButton>(R.id.mbtnaddmember)
@@ -67,12 +33,10 @@ class MainActivity : AppCompatActivity() {
             imgbtn.setBackgroundResource(R.drawable.round)
             imgbtn.setImageResource(R.drawable.zz)
             imgadd.addView(imgbtn)
-
-            imgbtn.setOnClickListener {
-                startActivity(Intent(this, FriendEdit::class.java))
-                overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
-            }
+            imgBtnList.add(imgbtn)
+            addbtnList(imgBtnList)
         }
+
 
         val btnpage = findViewById<Button>(R.id.mbtnpage)
         val btnteam = findViewById<Button>(R.id.mbtnablility)
@@ -80,20 +44,21 @@ class MainActivity : AppCompatActivity() {
         btnpage.setOnClickListener {
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
+            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
         }
         btnteam.setOnClickListener {
             val intent = Intent(this, MyAbility::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
+            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+        }
+    }
+    private fun addbtnList(imgBtnList: MutableList<ImageButton>){
+        for( num in imgBtnList) {
+            num.setOnClickListener {
+                startActivity(Intent(this, FriendEdit::class.java))
+                overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+            }
         }
     }
 }
 
-//data class MemberManager(val name: String, val mbti: String, val status: String)
-//object Members {
-//    val members: MutableList<MemberManager> = mutableListOf()
-//    fun addmembers(membermanager: MemberManager) {
-//        members.add(membermanager)
-//    }
-//}
