@@ -43,3 +43,7 @@ edittext_box_pressed.xml
 edittext_selector.xml
 로그인 / 비밀번호 입력창 박스 추가, 테두리 색변화 추가
 로그인 박스 사이즈 조정
+
+[FEAT] : ⚙️ 8.16 pm5.32
+MyAbility : 페이지 레이아웃 추가. 이후 각 프로젝트로 분산 및 ProgressBar 값 불러오는 기능 구현 필요
+MyAbilityDetail : 팀A 프로젝트 레이아웃 추가. DetailNotepad 부분에 스크롤 기능 추가 및 텍스트 추가 기능 구현필요
