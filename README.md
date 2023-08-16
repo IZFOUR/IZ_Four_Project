@@ -31,3 +31,7 @@ MainActivity
 SighInActivity 
  1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
  2.이미지 추가
+
+ FIX] : 🔧 8.16 15:28
+ activity_signin.xml
+ 1. 코드 위치 수정 
