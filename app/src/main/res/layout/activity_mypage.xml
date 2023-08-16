@@ -83,13 +83,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
 
 
-    <TextView
-        android:id="@+id/btn_edit"
+    <ImageButton
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
-        android:text="편집"
         android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -117,7 +116,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
-        android:background="@drawable/selector_image"
+        android:background="@drawable/shape_image"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +126,7 @@
             android:id="@+id/iv_odung_smile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/selector_image"
+            android:background="@drawable/shape_image"
             android:scaleType="centerCrop"
             android:src="@drawable/odung_smile" />
     </LinearLayout>
@@ -168,6 +167,7 @@
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:scaleType="centerInside"
+                        android:layout_marginLeft="10dp"
                         android:clipToOutline="true"
                         android:background="@drawable/round"
                         app:srcCompat="@drawable/zz" />
@@ -216,6 +216,7 @@
                         android:scaleType="centerInside"
                         android:clipToOutline="true"
                         android:background="@drawable/round"
+                        android:layout_marginLeft="10dp"
                         app:srcCompat="@drawable/zz" />
 
                     <TextView
