@@ -35,3 +35,11 @@ SighInActivity
  FIX] : 🔧 8.16 15:28
  activity_signin.xml
  1. 코드 위치 수정 
+
+[FEAT] : ⚙️ 8.16 pm4.44
+edittext_box.xml
+edittext_box.xml
+edittext_box_pressed.xml
+edittext_selector.xml
+로그인 / 비밀번호 입력창 박스 추가, 테두리 색변화 추가
+로그인 박스 사이즈 조정
