@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         for(imgbtn in imgBtn){
             val num = findViewById<ImageButton>(imgbtn)
             num.setOnClickListener {
-                startActivity(Intent(this, Friend::class.java))
+                startActivity(Intent(this, FriendEdit::class.java))
                 overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
             }
         }
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             imgadd.addView(imgbtn)
 
             imgbtn.setOnClickListener {
-                startActivity(Intent(this, Friend::class.java))
+                startActivity(Intent(this, FriendEdit::class.java))
                 overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
             }
         }
