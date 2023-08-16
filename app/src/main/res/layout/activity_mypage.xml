@@ -11,12 +11,12 @@
         android:id="@+id/tv_my_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
         android:layout_marginTop="24dp"
         android:text="My Page"
         android:textColor="@color/Black"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,10 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
         android:text="ID:"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/Black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
         app:layout_constraintTop_toBottomOf="@+id/tv_my_page" />
@@ -40,10 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
         android:text="이름:"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/Black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
         app:layout_constraintTop_toBottomOf="@+id/tv_id" />
@@ -54,10 +56,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
         android:text="MBTI:"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/Black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
@@ -69,10 +72,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
         android:text="한마디:"
+        android:textColor="@color/Black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/Black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
@@ -92,18 +96,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/btn_back"
+
+    <ImageButton
+        android:id="@+id/ib_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
-        android:text="back"
-        android:textColor="@color/Black"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
     <LinearLayout
         android:id="@+id/imageBorder"
@@ -119,11 +124,10 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_my_page">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/iv_odung_smile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@drawable/selector_image"
-            android:padding="15dp"
             android:scaleType="centerCrop"
             android:src="@drawable/odung_smile" />
     </LinearLayout>
@@ -141,22 +145,23 @@
         <ScrollView
             android:id="@+id/my_scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <LinearLayout
                 android:id="@+id/memolistview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_odung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="오늘의 이미지"
-                    android:textStyle="bold"
+                    android:textColor="@color/Black"
                     android:textSize="20sp"
-                    android:textColor="@color/Black"/>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/iv_odung"
@@ -171,17 +176,15 @@
                     android:text="귀여운 강아지"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/iv_puppy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/xuan_nguyen_zr0benrnvgq_unsplash_768x512_1"
-                    />
+                    app:srcCompat="@drawable/xuan_nguyen_zr0benrnvgq_unsplash_768x512_1" />
 
             </LinearLayout>
-
 
 
         </ScrollView>
