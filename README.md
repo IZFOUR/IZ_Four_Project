@@ -32,17 +32,17 @@ SighInActivity
  1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
  2.이미지 추가
 
- FIX] : 🔧 8.16 15:28
+ [FIX] : 🔧 8.16 15:28
  activity_signin.xml
  1. 코드 위치 수정
 
-[!HOTFIX] : 💥 My_Page: 8.16 pm 03: 50 
-이미지와 백버튼 수정 오류
+[!HOTFIX] : 💥 8.16 pm 03: 50 
+My_Page: 이미지와 백버튼 수정 오류
 이미지 크기 조정 오류
 뒤로 가기 버튼 수정 오류
 둘다 에뮬레이터에 적용이 안됨.
 
-[FEAT] : ⚙️ 8.16 pm4.44
+[FEAT] : ⚙️ 8.16 pm 04: 44
 edittext_box.xml
 edittext_box.xml
 edittext_box_pressed.xml
@@ -50,23 +50,23 @@ edittext_selector.xml
 로그인 / 비밀번호 입력창 박스 추가, 테두리 색변화 추가
 로그인 박스 사이즈 조정
 
-FIX] : 🔧 My_page: 8.16 pm 04:50 
-프로필 아래의 정보 칸 수정 
+[FIX] : 🔧 8.16 pm 04: 50 
+My_page: 프로필 아래의 정보 칸 수정 
 에뮬레이터에서 보이는 정보칸 텍스트와 이미지 간격, 크기 조절
 
-[FEAT] : ⚙️ 8.16 pm5.32
+[FEAT] : ⚙️ 8.16 pm 05.32
 MyAbility : 페이지 레이아웃 추가. 이후 각 프로젝트로 분산 및 ProgressBar 값 불러오는 기능 구현 필요
 MyAbilityDetail : 팀A 프로젝트 레이아웃 추가. DetailNotepad 부분에 스크롤 기능 추가 및 텍스트 추가 기능 구현필요
 
-[FEAT] : ⚙️ 8.16 pm.5:30
+[FEAT] : ⚙️ 8.16 pm.05:30
 activity_friendedit.xml
 1.디자인초안
 2.뒤로가기 버튼
 
-[FEAT] : ⚙️ MainActivity pm10:30
+[FEAT] : ⚙️ MainActivity pm 10: 30
 1. 데이터가 있는 4종류의 이미지버튼과
 2. add버튼으로 추가되는 버튼 두종류 합침
 
-FIX] : 🔧 Mypage 8. 16 pm10:50 
-MyPageEdit추가. 연동은 아직..
+[FIX] : 🔧  8.16 pm 10: 50 
+My_page: MyPageEdit추가. 연동은 아직..
 MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
