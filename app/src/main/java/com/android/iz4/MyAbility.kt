@@ -7,8 +7,9 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 
-// 조병현 형님: MyTeamPage -> MyAbility로 액티비티 이름 변경하였습니다.
-// Theme에서 Parent부분 Material3 -> AppCompat 변경해서 액션바랑 기타 버튼들 색상이 변경되어있을겁니다.
+
+//(ViewBinding, Fragment, RecyclerView, Adapter는 사용하지 말아주세요.)
+//7777I에엙 그럼 뭘 사용해야하지
 class MyAbility : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +21,8 @@ class MyAbility : AppCompatActivity() {
             Toast.makeText(this, "메인페이지로 돌아가기", Toast.LENGTH_SHORT).show()
             finish()}
 
-
-        val next = findViewById<Button>(R.id.testbutton)
+        //디테일 페이지로 넘겨주기
+        val next = findViewById<Button>(R.id.AtoDetail)
         next.setOnClickListener{
             val intent = Intent(this, MyAbilityDetail::class.java)
             startActivity(intent)

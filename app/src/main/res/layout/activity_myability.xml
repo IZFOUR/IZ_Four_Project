@@ -10,13 +10,13 @@
         android:id="@+id/toolbar"
         android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/White"
+            android:textColor="@color/Black"
             android:textSize="20dp"
             android:text="Test area">
 
@@ -37,15 +37,310 @@
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
-    <Button
-        android:id="@+id/testbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="testclicked"
-        android:clickable="true"
-        android:text="testbutton"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:ignore="MissingConstraints" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ACover"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Atoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/AName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="팀A 프로젝트"
+                    android:textColor="@color/Black"
+                    android:textSize="16dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="16dp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/AtoDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:text="세부사항"
+                    app:layout_constraintBottom_toBottomOf="@+id/Atoolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/Atoolbar"
+                    app:layout_constraintTop_toTopOf="parent"></Button>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ACase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/ADeadLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마감"
+                    app:layout_constraintBottom_toTopOf="@+id/ABarDeadLine"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="29dp" />
+
+                <ProgressBar
+                    android:id="@+id/ABarDeadLine"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/AProcess"
+                    app:layout_constraintTop_toBottomOf="@+id/ADeadLine"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/AProcess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="진행"
+                    app:layout_constraintBottom_toTopOf="@+id/ABarProcess"
+                    app:layout_constraintEnd_toEndOf="@+id/ADeadLine"
+                    app:layout_constraintStart_toStartOf="@+id/ADeadLine"
+                    app:layout_constraintTop_toBottomOf="@+id/ABarDeadLine"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ProgressBar
+                    android:id="@+id/ABarProcess"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/AProcess"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="121dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/BCover"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:layout_constraintBottom_toTopOf="@+id/CCover"
+            app:layout_constraintTop_toBottomOf="@+id/ACover">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Btoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/BName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="팀B 프로젝트"
+                    android:textColor="@color/Black"
+                    android:textSize="16dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="16dp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/BtoDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:text="세부사항"
+                    app:layout_constraintBottom_toBottomOf="@+id/Btoolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/Btoolbar"
+                    app:layout_constraintTop_toTopOf="parent"></Button>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/BCase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/BDeadLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마감"
+                    app:layout_constraintBottom_toTopOf="@+id/BBarDeadLine"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="29dp" />
+
+                <ProgressBar
+                    android:id="@+id/BBarDeadLine"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/BProcess"
+                    app:layout_constraintTop_toBottomOf="@+id/BDeadLine"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/BProcess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="진행"
+                    app:layout_constraintBottom_toTopOf="@+id/BBarProcess"
+                    app:layout_constraintEnd_toEndOf="@+id/BDeadLine"
+                    app:layout_constraintStart_toStartOf="@+id/BDeadLine"
+                    app:layout_constraintTop_toBottomOf="@+id/BBarDeadLine"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ProgressBar
+                    android:id="@+id/BBarProcess"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/BProcess"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="121dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CCover"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Ctoolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/CName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="팀C 프로젝트"
+                    android:textColor="@color/Black"
+                    android:textSize="16dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="146dp"
+                    tools:layout_editor_absoluteY="16dp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/CtoDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:text="세부사항"
+                    app:layout_constraintBottom_toBottomOf="@+id/Ctoolbar"
+                    app:layout_constraintEnd_toEndOf="@+id/Ctoolbar"
+                    app:layout_constraintTop_toTopOf="parent"></Button>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/CCase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp">
+
+                <TextView
+                    android:id="@+id/CDeadLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="마감"
+                    app:layout_constraintBottom_toTopOf="@+id/CBarDeadLine"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="29dp" />
+
+                <ProgressBar
+                    android:id="@+id/CBarDeadLine"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/CProcess"
+                    app:layout_constraintTop_toBottomOf="@+id/CDeadLine"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/CProcess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="진행"
+                    app:layout_constraintBottom_toTopOf="@+id/CBarProcess"
+                    app:layout_constraintEnd_toEndOf="@+id/CDeadLine"
+                    app:layout_constraintStart_toStartOf="@+id/CDeadLine"
+                    app:layout_constraintTop_toBottomOf="@+id/CBarDeadLine"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <ProgressBar
+                    android:id="@+id/CBarProcess"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/CProcess"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:layout_editor_absoluteX="121dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
