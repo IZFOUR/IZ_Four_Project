@@ -70,3 +70,8 @@ activity_friendedit.xml
 [FIX] : 🔧  8.16 pm 10: 50 
 **My_page**: MyPageEdit추가. 연동은 아직..
 MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
+
+[FEAT] : ⚙️ 8.17 am 04:00
+1. MainActivity에서 이미지 클릭하면 해당 이미지와 관련된 데이터 출력
+2. 그리고 이동한 FriendEdit에서 데이터 수정 후 상단 버튼누르면 데이터 저장완료
+3. 멤버 우측에 플로팅액션바 눌러서 멤버추가 후 같은방식으로 데이터 추가후 상단 버튼누르면 데이터 저장됨.
