@@ -28,6 +28,6 @@ MainActivity
 5.FriendEditActivity 추가
 
 [FEAT] : ⚙️8.16(15:12)
-SighInActivity
-1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
-2.이미지 추가
+SighInActivity 
+ 1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
+ 2.이미지 추가
