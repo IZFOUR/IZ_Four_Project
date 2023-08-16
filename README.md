@@ -37,7 +37,7 @@ SighInActivity
  1. 코드 위치 수정
 
 [!HOTFIX] : 💥 8.16 pm 03: 50 
-My_Page: 이미지와 백버튼 수정 오류
+**My_Page**: 이미지와 백버튼 수정 오류
 이미지 크기 조정 오류
 뒤로 가기 버튼 수정 오류
 둘다 에뮬레이터에 적용이 안됨.
@@ -51,7 +51,7 @@ edittext_selector.xml
 로그인 박스 사이즈 조정
 
 [FIX] : 🔧 8.16 pm 04: 50 
-My_page: 프로필 아래의 정보 칸 수정 
+**My_page**: 프로필 아래의 정보 칸 수정 
 에뮬레이터에서 보이는 정보칸 텍스트와 이미지 간격, 크기 조절
 
 [FEAT] : ⚙️ 8.16 pm 05.32
@@ -68,5 +68,5 @@ activity_friendedit.xml
 2. add버튼으로 추가되는 버튼 두종류 합침
 
 [FIX] : 🔧  8.16 pm 10: 50 
-My_page: MyPageEdit추가. 연동은 아직..
+**My_page**: MyPageEdit추가. 연동은 아직..
 MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
