@@ -5,19 +5,33 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 
 class FriendEdit : AppCompatActivity() {
+
+        private lateinit var addimg:LinearLayout
+        private var indexs = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
         Log.d("Lifecycle", "onCreate")
+
+        addimg = findViewById(R.id.feaddimg)
+        val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
+        addButton.setOnClickListener{
+            additem()
+        }
+
 
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
         febtnback.setOnClickListener {
@@ -77,6 +91,18 @@ class FriendEdit : AppCompatActivity() {
             val imageUrl = ""
             Picasso.get().load(imageUrl).into(imgclick)
         }
+    }
+    fun additem(){
+        val inflater = LayoutInflater.from(this)
+        val item = inflater.inflate(R.layout.activity_friendedit, addimg, false )
+        addimg.addView(item)
+
+        val titleEditText = item.findViewById<EditText>(R.id.feTitleEditView)
+        val contentEditText = item.findViewById<EditText>(R.id.feContentEditView)
+        titleEditText.setText("Title ${indexs + 1}")
+        contentEditText.setText("Content ${indexs + 1}")
+
+        indexs++
     }
     override fun onStart() {
         super.onStart()
