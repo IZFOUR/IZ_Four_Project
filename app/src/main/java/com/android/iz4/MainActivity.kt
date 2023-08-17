@@ -16,6 +16,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var friendresult: ActivityResultLauncher<Intent>
+    private lateinit var imgadd: LinearLayout
+    private lateinit var addmemberbtn: FloatingActionButton
     companion object {
         val nickList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         )
         addbtnList(imgBtnList)
 
-        val imgadd = findViewById<LinearLayout>(R.id.maddimg)
-        val addmemberbtn = findViewById<FloatingActionButton>(R.id.mbtnaddmember)
+        imgadd = findViewById(R.id.maddimg)
+        addmemberbtn = findViewById(R.id.mbtnaddmember)
 
         addmemberbtn.setOnClickListener {
             val imgbtn = ImageButton(this)
@@ -83,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun addbtnList(imgBtnList: MutableList<ImageButton>) {
-        for ((index, num) in imgBtnList.withIndex()) {
+        imgBtnList.forEachIndexed { index, num ->
             num.setOnClickListener {
                 if (index < nickList.size && index < nameList.size &&
                     index < mbtiList.size && index < statusList.size
@@ -100,6 +102,24 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+//    fun addbtnList(imgBtnList: MutableList<ImageButton>) {
+//        for ((index, num) in imgBtnList.withIndex()) {
+//            num.setOnClickListener {
+//                if (index < nickList.size && index < nameList.size &&
+//                    index < mbtiList.size && index < statusList.size
+//                ) {
+//                    val intent = Intent(this, FriendEdit::class.java)
+//                    intent.putExtra("index", index)
+//                    intent.putExtra("fenick", nickList[index])
+//                    intent.putExtra("fename", nameList[index])
+//                    intent.putExtra("fembti", mbtiList[index])
+//                    intent.putExtra("festatus", statusList[index])
+//                    friendresult.launch(intent)
+//                    overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+//                }
+//            }
+//        }
+//    }
 }
 
 
