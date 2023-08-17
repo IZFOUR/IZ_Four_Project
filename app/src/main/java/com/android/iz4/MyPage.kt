@@ -3,6 +3,7 @@ package com.android.iz4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -14,6 +15,12 @@ class MyPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
+
+        val id = intent.getStringExtra("id")
+        val name = intent.getStringExtra("name")
+        val age = intent.getStringExtra("age")
+        val mbti = intent.getStringExtra("mbti")
+        Log.d("MyPage", "id = $id, name = $name, age = $age, mbti = $mbti")
 
 
         val btn_memo = findViewById<FloatingActionButton>(R.id.ftActBtn)

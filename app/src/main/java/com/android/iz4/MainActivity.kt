@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         val imgBtnList = mutableListOf<ImageButton>(
             findViewById(R.id.mimgbtn1),
             findViewById(R.id.mimgbtn2),
@@ -57,7 +56,16 @@ class MainActivity : AppCompatActivity() {
         val btnteam = findViewById<Button>(R.id.mbtnablility)
 
         btnpage.setOnClickListener {
+            val id = intent.getStringExtra("dataFromSignInActivityId")
+            val name = intent.getStringExtra("dataFromSignInActivityName")
+            val age = intent.getStringExtra("dataFromSignInActivityAge")
+            val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
             val intent = Intent(this, MyPage::class.java)
+            intent.putExtra("id",id)
+            intent.putExtra("name",name)
+            intent.putExtra("age",age)
+            intent.putExtra("mbti",mbti)
+
             startActivity(intent)
             overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
         }
