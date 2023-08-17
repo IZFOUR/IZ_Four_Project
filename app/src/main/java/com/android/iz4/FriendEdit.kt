@@ -1,20 +1,37 @@
 package com.android.iz4
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.squareup.picasso.Picasso
 
 class FriendEdit : AppCompatActivity() {
 
+        private lateinit var addimg:LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
         Log.d("Lifecycle", "onCreate")
+
+        addimg = findViewById(R.id.feaddimg)
+        val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
+        addButton.setOnClickListener{
+            val inflater = LayoutInflater.from(this)
+            val item = inflater.inflate(R.layout.additem, addimg, false)
+            addimg.addView(item)
+        }
+
 
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
         febtnback.setOnClickListener {
@@ -24,17 +41,23 @@ class FriendEdit : AppCompatActivity() {
         val editname = findViewById<EditText>(R.id.feNameEditView)
         val editmbti = findViewById<EditText>(R.id.feMbtiEditView)
         val editstatus = findViewById<EditText>(R.id.feStatusEditView)
+        val edittitle = findViewById<EditText>(R.id.feTitleEditView)
+        val editcontent = findViewById<EditText>(R.id.feContentEditView)
 
         val index = intent.getIntExtra("index", -1)
         val fenick = intent.getStringExtra("fenick") ?: ""
         val fename = intent.getStringExtra("fename") ?: ""
         val fembti = intent.getStringExtra("fembti") ?: ""
         val festatus = intent.getStringExtra("festatus") ?: ""
+        val title = intent.getStringExtra("fetitle") ?:""
+        val content = intent.getStringExtra("fecontent") ?:""
 
         editnick.setText(fenick)
         editname.setText(fename)
         editmbti.setText(fembti)
         editstatus.setText(festatus)
+        edittitle.setText(title)
+        editcontent.setText(content)
 
         val btnedit = findViewById<Button>(R.id.febtnedit)
         btnedit.setOnClickListener {
@@ -42,6 +65,8 @@ class FriendEdit : AppCompatActivity() {
             val name = editname.text.toString()
             val mbti = editmbti.text.toString()
             val status = editstatus.text.toString()
+            val title = edittitle.text.toString()
+            val content = editcontent.text.toString()
 
 
 
@@ -53,11 +78,18 @@ class FriendEdit : AppCompatActivity() {
                 intent.putExtra("inputNick",nick)
                 intent.putExtra("inputMbti",mbti)
                 intent.putExtra("inputStatus",status)
+                intent.putExtra("inputTitle",title)
+                intent.putExtra("inputContent",content)
                 setResult(RESULT_OK,intent)
                 finish()
             }else {
                 Toast.makeText(this,"입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             }
+        }
+        val imgclick = findViewById<ImageView>(R.id.feprofile)
+        imgclick.setOnClickListener {
+            val imageUrl = ""
+            Picasso.get().load(imageUrl).into(imgclick)
         }
     }
     override fun onStart() {
