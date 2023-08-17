@@ -102,3 +102,7 @@ MainActivity, FriendEdit 코드 최적화
 [FEAT] : ⚙️ 8.17 pm 10:45
 1.MainActivity(가로모드 전체스크롤 기능)
 2.FriendEdit(title,content 내용 추가,수정)
+
+[FEAT] : ⚙️ 8.17 pm 11:30
+1. MyAbilityDetail 기능추가
+2. 실수로 메인에 머지했어요 :(
