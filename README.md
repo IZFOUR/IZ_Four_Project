@@ -99,3 +99,6 @@ MainActivity, FriendEdit 코드 최적화
 [DESIGN] : 🎨 8.17 pm 10:22
 1. MyPageEdit 디자인 추가
 
+[FEAT] : ⚙️ 8.17 pm 10:45
+1.MainActivity(가로모드 전체스크롤 기능)
+2.FriendEdit(title,content 내용 추가,수정)
