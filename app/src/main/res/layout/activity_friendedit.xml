@@ -172,7 +172,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:hint="@string/inputcontent"
-                android:background="@color/Black"
                 android:inputType="text"
                 android:textSize="15sp"/>
 

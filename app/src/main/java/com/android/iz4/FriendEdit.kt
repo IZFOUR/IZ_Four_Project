@@ -27,17 +27,23 @@ class FriendEdit : AppCompatActivity() {
         val editname = findViewById<EditText>(R.id.feNameEditView)
         val editmbti = findViewById<EditText>(R.id.feMbtiEditView)
         val editstatus = findViewById<EditText>(R.id.feStatusEditView)
+        val edittitle = findViewById<EditText>(R.id.feTitleEditView)
+        val editcontent = findViewById<EditText>(R.id.feContentEditView)
 
         val index = intent.getIntExtra("index", -1)
         val fenick = intent.getStringExtra("fenick") ?: ""
         val fename = intent.getStringExtra("fename") ?: ""
         val fembti = intent.getStringExtra("fembti") ?: ""
         val festatus = intent.getStringExtra("festatus") ?: ""
+        val title = intent.getStringExtra("fetitle") ?:""
+        val content = intent.getStringExtra("fecontent") ?:""
 
         editnick.setText(fenick)
         editname.setText(fename)
         editmbti.setText(fembti)
         editstatus.setText(festatus)
+        edittitle.setText(title)
+        editcontent.setText(content)
 
         val btnedit = findViewById<Button>(R.id.febtnedit)
         btnedit.setOnClickListener {
@@ -45,6 +51,8 @@ class FriendEdit : AppCompatActivity() {
             val name = editname.text.toString()
             val mbti = editmbti.text.toString()
             val status = editstatus.text.toString()
+            val title = edittitle.text.toString()
+            val content = editcontent.text.toString()
 
 
 
@@ -56,6 +64,8 @@ class FriendEdit : AppCompatActivity() {
                 intent.putExtra("inputNick",nick)
                 intent.putExtra("inputMbti",mbti)
                 intent.putExtra("inputStatus",status)
+                intent.putExtra("inputTitle",title)
+                intent.putExtra("inputContent",content)
                 setResult(RESULT_OK,intent)
                 finish()
             }else {
