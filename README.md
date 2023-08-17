@@ -111,6 +111,6 @@ MainActivity, FriendEdit 코드 최적화
 1. FriendEdit에서 플로팅버튼을 눌렀을떄 데이터 추가!
 2. 현재 dev, main둘다 최신데이터인데 원래하던데로 아침에 pull은 dev를 땡기시고, push해서 pr하는건 dev에다가하세요. ( main은 놔두세요)
 
-[FEAT] : ⚙️ SignUpActivity -> MyPage로 데이터 이동
+[FEAT] : ⚙️ 8.18 am 05:00
 SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까지 전달 Log.d 달아놨으니 확인
 
