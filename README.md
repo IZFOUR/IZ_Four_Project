@@ -106,3 +106,7 @@ MainActivity, FriendEdit 코드 최적화
 [FEAT] : ⚙️ 8.17 pm 11:30
 1. MyAbilityDetail 기능추가
 2. 실수로 메인에 머지했어요 :(
+
+[FEAT] : ⚙️ 8.18 am 02:53
+1. FriendEdit에서 플로팅버튼을 눌렀을떄 데이터 추가!
+2. 현재 dev, main둘다 최신데이터인데 원래하던데로 아침에 pull은 dev를 땡기시고, push해서 pr하는건 dev에다가하세요. ( main은 놔두세요)
