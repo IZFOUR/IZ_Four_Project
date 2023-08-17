@@ -23,3 +23,55 @@
 MainActivity
 1. 멤버추가 기능( 기존에 있던 이미지의 외각선 및 기타 옵션들 유지하면서 추가// xml연동)
 2. 자잘한 xml수정
+3.MainActivity에서 다른 액티비티로 넘어갈때 모두 적용
+4.OtherPage -> Friend 액티비티 수정
+5.FriendEditActivity 추가
+
+[FEAT] : ⚙️8.16(15:12)
+SighInActivity 
+ 1.스타일 추가 // 이미지사이즈 통일하는 거 themes.xml
+ 2.이미지 추가
+
+ [FIX] : 🔧 8.16 15:28
+ activity_signin.xml
+ 1. 코드 위치 수정
+
+[!HOTFIX] : 💥 8.16 pm 03: 50 
+**My_Page**: 이미지와 백버튼 수정 오류
+이미지 크기 조정 오류
+뒤로 가기 버튼 수정 오류
+둘다 에뮬레이터에 적용이 안됨.
+
+[FEAT] : ⚙️ 8.16 pm 04: 44
+edittext_box.xml
+edittext_box.xml
+edittext_box_pressed.xml
+edittext_selector.xml
+로그인 / 비밀번호 입력창 박스 추가, 테두리 색변화 추가
+로그인 박스 사이즈 조정
+
+[FIX] : 🔧 8.16 pm 04: 50 
+**My_page**: 프로필 아래의 정보 칸 수정 
+에뮬레이터에서 보이는 정보칸 텍스트와 이미지 간격, 크기 조절
+
+[FEAT] : ⚙️ 8.16 pm 05.32
+MyAbility : 페이지 레이아웃 추가. 이후 각 프로젝트로 분산 및 ProgressBar 값 불러오는 기능 구현 필요
+MyAbilityDetail : 팀A 프로젝트 레이아웃 추가. DetailNotepad 부분에 스크롤 기능 추가 및 텍스트 추가 기능 구현필요
+
+[FEAT] : ⚙️ 8.16 pm.05:30
+activity_friendedit.xml
+1.디자인초안
+2.뒤로가기 버튼
+
+[FEAT] : ⚙️ MainActivity pm 10: 30
+1. 데이터가 있는 4종류의 이미지버튼과
+2. add버튼으로 추가되는 버튼 두종류 합침
+
+[FIX] : 🔧  8.16 pm 10: 50 
+**My_page**: MyPageEdit추가. 연동은 아직..
+MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
+
+[FEAT] : ⚙️ 8.17 am 04:00
+1. MainActivity에서 이미지 클릭하면 해당 이미지와 관련된 데이터 출력
+2. 그리고 이동한 FriendEdit에서 데이터 수정 후 상단 버튼누르면 데이터 저장완료
+3. 멤버 우측에 플로팅액션바 눌러서 멤버추가 후 같은방식으로 데이터 추가후 상단 버튼누르면 데이터 저장됨.
