@@ -113,4 +113,4 @@ MainActivity, FriendEdit 코드 최적화
 
 [FEAT] : ⚙️ 8.18 am 05:00
 SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까지 전달 Log.d 달아놨으니 확인
-
+01023922482 모닝콜좀 부탁합니다 못일어날거같음 ㅠㅠ
