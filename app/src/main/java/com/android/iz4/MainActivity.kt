@@ -3,59 +3,37 @@ package com.android.iz4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Nickname
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var friendresult: ActivityResultLauncher<Intent>
+    companion object {
+        val nickList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val mbtiList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val statusList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val mainmember: MutableList<MemberManager> = mutableListOf(
-//            MemberManager("가", "a", ""),
-//            MemberManager("나", "b", ""),
-//            MemberManager("다", "c", ""),
-//            MemberManager("라", "d", ""),
-//            MemberManager("마", "e", ""),
-//        )
-//        for (member in mainmember){
-//            Members.addmembers(member)
-//        }
-//        val imgbtn1 = findViewById<ImageButton>(R.id.mimgbtn1)
-//        val imgbtn2 = findViewById<ImageButton>(R.id.mimgbtn2)
-//        val imgbtn3 = findViewById<ImageButton>(R.id.mimgbtn3)
-//        val imgbtn4 = findViewById<ImageButton>(R.id.mimgbtn4)
-//
-//        imgbtn1.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn2.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn3.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
-//        imgbtn4.setOnClickListener {
-//            startActivity(Intent(this, OtherPage::class.java))
-//        }
 
-        val imgBtn= listOf(
-            R.id.mimgbtn1,
-            R.id.mimgbtn2,
-            R.id.mimgbtn3,
-            R.id.mimgbtn4,
+        val imgBtnList = mutableListOf<ImageButton>(
+            findViewById(R.id.mimgbtn1),
+            findViewById(R.id.mimgbtn2),
+            findViewById(R.id.mimgbtn3),
+            findViewById(R.id.mimgbtn4),
         )
-        for(imgbtn in imgBtn){
-            val num = findViewById<ImageButton>(imgbtn)
-            num.setOnClickListener {
-                startActivity(Intent(this, Friend::class.java))
-                overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
-            }
-        }
+        addbtnList(imgBtnList)
 
         val imgadd = findViewById<LinearLayout>(R.id.maddimg)
         val addmemberbtn = findViewById<FloatingActionButton>(R.id.mbtnaddmember)
@@ -67,11 +45,8 @@ class MainActivity : AppCompatActivity() {
             imgbtn.setBackgroundResource(R.drawable.round)
             imgbtn.setImageResource(R.drawable.zz)
             imgadd.addView(imgbtn)
-
-            imgbtn.setOnClickListener {
-                startActivity(Intent(this, Friend::class.java))
-                overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
-            }
+            imgBtnList.add(imgbtn)
+            addbtnList(imgBtnList)
         }
 
         val btnpage = findViewById<Button>(R.id.mbtnpage)
@@ -80,20 +55,51 @@ class MainActivity : AppCompatActivity() {
         btnpage.setOnClickListener {
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
+            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
         }
         btnteam.setOnClickListener {
             val intent = Intent(this, MyAbility::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.animation_in ,R.anim.animation_out)
+            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+        }
+        friendresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == RESULT_OK) {
+                val data = it.data
+                if (data != null) {
+                    val index = data.getIntExtra("index", -1)
+                    if (index >= 0) {
+                        nickList[index] = data.getStringExtra("inputNick") ?: ""
+                        nameList[index] = data.getStringExtra("inputName") ?: ""
+                        mbtiList[index] = data.getStringExtra("inputMbti") ?: ""
+                        statusList[index] = data.getStringExtra("inputStatus") ?: ""
+
+                        nickList.add(nickList[index] ?: "")
+                        nameList.add(nameList[index] ?: "")
+                        mbtiList.add(mbtiList[index] ?: "")
+                        statusList.add(statusList[index] ?: "")
+                    }
+                }
+            }
+        }
+    }
+    fun addbtnList(imgBtnList: MutableList<ImageButton>) {
+        for ((index, num) in imgBtnList.withIndex()) {
+            num.setOnClickListener {
+                if (index < nickList.size && index < nameList.size &&
+                    index < mbtiList.size && index < statusList.size
+                ) {
+                    val intent = Intent(this, FriendEdit::class.java)
+                    intent.putExtra("index", index)
+                    intent.putExtra("fenick", nickList[index])
+                    intent.putExtra("fename", nameList[index])
+                    intent.putExtra("fembti", mbtiList[index])
+                    intent.putExtra("festatus", statusList[index])
+                    friendresult.launch(intent)
+                    overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+                }
+            }
         }
     }
 }
 
-//data class MemberManager(val name: String, val mbti: String, val status: String)
-//object Members {
-//    val members: MutableList<MemberManager> = mutableListOf()
-//    fun addmembers(membermanager: MemberManager) {
-//        members.add(membermanager)
-//    }
-//}
+
