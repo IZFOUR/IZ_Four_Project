@@ -17,21 +17,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 
 class FriendEdit : AppCompatActivity() {
-
         private lateinit var addimg:LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
         Log.d("Lifecycle", "onCreate")
-
-        addimg = findViewById(R.id.feaddimg)
-        val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
-        addButton.setOnClickListener{
-            val inflater = LayoutInflater.from(this)
-            val item = inflater.inflate(R.layout.additem, addimg, false)
-            addimg.addView(item)
-        }
-
 
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
         febtnback.setOnClickListener {
@@ -59,6 +49,15 @@ class FriendEdit : AppCompatActivity() {
         edittitle.setText(title)
         editcontent.setText(content)
 
+        addimg = findViewById(R.id.feaddimg)
+        val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
+        addButton.setOnClickListener{
+            val inflater = LayoutInflater.from(this)
+            val item = inflater.inflate(R.layout.additem, addimg, false)
+
+            addimg.addView(item)
+        }
+
         val btnedit = findViewById<Button>(R.id.febtnedit)
         btnedit.setOnClickListener {
             val nick = editnick.text.toString()
@@ -67,8 +66,6 @@ class FriendEdit : AppCompatActivity() {
             val status = editstatus.text.toString()
             val title = edittitle.text.toString()
             val content = editcontent.text.toString()
-
-
 
             if(!nick.isEmpty() && !name.isEmpty() && !mbti.isEmpty() && !status.isEmpty()){
 

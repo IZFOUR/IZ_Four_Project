@@ -3,15 +3,11 @@ package com.android.iz4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.lifecycle.viewmodel.CreationExtras
-import com.android.iz4.MainActivity
-import com.android.iz4.R
 
 class SignInActivity : AppCompatActivity() {
 
