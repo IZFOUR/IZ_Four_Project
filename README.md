@@ -96,3 +96,6 @@ MainActivity, FriendEdit 코드 최적화
 [FEAT] : ⚙️ 8.17 pm7:39분
 1. 로그인 / 회원가입 기능구현
 
+[DESIGN] : 🎨 8.17 pm 10:22
+1. MyPageEdit 디자인 추가
+
