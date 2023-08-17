@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D0A9F5"
+    tools:context=".MyPage">
+
+    <TextView
+        android:id="@+id/tv_my_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="My Page"
+        android:textColor="@color/Black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="ID:"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_page" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:text="이름:"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+
+    <TextView
+        android:id="@+id/tv_mbti"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:text="MBTI:"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_talk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:text="한마디:"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageBorder"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
+
+
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/Black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:onClick="click"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <LinearLayout
+        android:id="@+id/imageBorder"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/shape_image"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_page">
+
+        <ImageView
+            android:id="@+id/iv_odung_smile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/odung_smile" />
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/White"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_talk">
+
+        <ScrollView
+            android:id="@+id/my_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/memolistview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/iv_zzslp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="centerInside"
+                        android:layout_marginLeft="10dp"
+                        android:clipToOutline="true"
+                        android:background="@drawable/round"
+                        app:srcCompat="@drawable/zz" />
+
+                    <TextView
+                        android:id="@+id/tv_today"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="25dp"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/Black"
+                        android:gravity="center_vertical"
+                        android:text="오둥이의 정보" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_safari"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/safari_lodge" />
+
+                <TextView
+                    android:id="@+id/tv_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="(2/3일) 가족과 함께 여행 간 사파리의 3박 4일의 펜션 후기"
+                    android:textColor="@color/Black"
+                    android:textSize="20dp"
+                    android:textStyle="normal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_zzslp2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="centerInside"
+                        android:clipToOutline="true"
+                        android:background="@drawable/round"
+                        android:layout_marginLeft="10dp"
+                        app:srcCompat="@drawable/zz" />
+
+                    <TextView
+                        android:id="@+id/tv_today2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="25dp"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/Black"
+                        android:gravity="center_vertical"
+                        android:text="오둥이의 정보" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/xuan_nguyen_zr0benrnvgq_unsplash_768x512_1" />
+
+                <TextView
+                    android:id="@+id/tv_review2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(3/4일) 우리 가족이 된 멍멍이"
+                    android:textStyle="normal"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
