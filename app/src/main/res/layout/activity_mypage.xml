@@ -41,14 +41,15 @@
             app:srcCompat="?attr/homeAsUpIndicator" />
 
 
+
     </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/tv_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:text="ID:"
         android:textColor="@color/Black"
@@ -111,11 +112,9 @@
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
         android:background="@drawable/shape_image"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_talk"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
@@ -127,11 +126,12 @@
             android:scaleType="centerCrop"
             android:src="@drawable/odung_smile" />
     </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:background="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +150,7 @@
                 android:id="@+id/memolistview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -163,10 +163,10 @@
                         android:id="@+id/iv_zzslp"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:scaleType="centerInside"
                         android:layout_marginLeft="10dp"
-                        android:clipToOutline="true"
                         android:background="@drawable/round"
+                        android:clipToOutline="true"
+                        android:scaleType="centerInside"
                         app:srcCompat="@drawable/zz" />
 
                     <TextView
@@ -175,11 +175,11 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="25dp"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:textColor="@color/Black"
                         android:gravity="center_vertical"
-                        android:text="오둥이의 정보" />
+                        android:text="오둥이의 정보"
+                        android:textColor="@color/Black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <ImageView
@@ -198,7 +198,7 @@
                     android:text="(2/3일) 가족과 함께 여행 간 사파리의 3박 4일의 펜션 후기"
                     android:textColor="@color/Black"
                     android:textSize="20dp"
-                    android:textStyle="normal"/>
+                    android:textStyle="normal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -210,10 +210,10 @@
                         android:id="@+id/iv_zzslp2"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:scaleType="centerInside"
-                        android:clipToOutline="true"
-                        android:background="@drawable/round"
                         android:layout_marginLeft="10dp"
+                        android:background="@drawable/round"
+                        android:clipToOutline="true"
+                        android:scaleType="centerInside"
                         app:srcCompat="@drawable/zz" />
 
                     <TextView
@@ -234,8 +234,8 @@
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:scaleType="centerCrop"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@drawable/xuan_nguyen_zr0benrnvgq_unsplash_768x512_1" />
@@ -245,9 +245,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="(3/4일) 우리 가족이 된 멍멍이"
-                    android:textStyle="normal"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
+                    android:textStyle="normal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </LinearLayout>
@@ -259,10 +259,10 @@
             android:id="@+id/toolbar3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme">
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/ftActBtn"
@@ -271,13 +271,11 @@
                 android:layout_gravity="right"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:clickable="true"
                 android:backgroundTint="@color/White"
+                android:clickable="true"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
         </androidx.appcompat.widget.Toolbar>
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
