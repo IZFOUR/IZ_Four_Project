@@ -145,6 +145,15 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/febtntitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginVertical="10dp"
+        android:backgroundTint="@color/Yellow100"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -166,6 +175,11 @@
                 android:hint="@string/inputtitle"
                 android:inputType="text"
                 android:textSize="15sp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                app:srcCompat="@drawable/iz4_background7" />
             <EditText
                 android:id="@+id/feContentEditView"
                 android:layout_width="match_parent"
