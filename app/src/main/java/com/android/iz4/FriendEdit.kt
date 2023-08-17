@@ -19,8 +19,6 @@ import com.squareup.picasso.Picasso
 class FriendEdit : AppCompatActivity() {
 
         private lateinit var addimg:LinearLayout
-        private var indexs = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
@@ -29,7 +27,9 @@ class FriendEdit : AppCompatActivity() {
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
         addButton.setOnClickListener{
-            additem()
+            val inflater = LayoutInflater.from(this)
+            val item = inflater.inflate(R.layout.additem, addimg, false)
+            addimg.addView(item)
         }
 
 
@@ -91,18 +91,6 @@ class FriendEdit : AppCompatActivity() {
             val imageUrl = ""
             Picasso.get().load(imageUrl).into(imgclick)
         }
-    }
-    fun additem(){
-        val inflater = LayoutInflater.from(this)
-        val item = inflater.inflate(R.layout.activity_friendedit, addimg, false )
-        addimg.addView(item)
-
-        val titleEditText = item.findViewById<EditText>(R.id.feTitleEditView)
-        val contentEditText = item.findViewById<EditText>(R.id.feContentEditView)
-        titleEditText.setText("Title ${indexs + 1}")
-        contentEditText.setText("Content ${indexs + 1}")
-
-        indexs++
     }
     override fun onStart() {
         super.onStart()
