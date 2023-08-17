@@ -88,3 +88,6 @@ MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
 
 [FEAT] : ⚙️8.17 17:30
 MyAbilityDetail 스크롤 기능 구현성공.  메모 추가 및 삭제기능 구현예정.  ProgressBar 관련 상호작용 고안중
+
+FIX] : 🔧 08.17 18.27
+MainActivity, FriendEdit 코드 최적화
