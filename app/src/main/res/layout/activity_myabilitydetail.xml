@@ -170,41 +170,60 @@
             android:orientation="vertical">
 
           <EditText
+              android:id="@+id/memoinput"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="메모를 남겨주세요" />
 
           <EditText
-              android:id="@+id/testarea"
+              android:id="@+id/memoone"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"/>
+
           <EditText
+              android:id="@+id/memotwo"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memothree"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memofour"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memofive"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memosix"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memoseven"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memoeight"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memonine"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
+
           <EditText
+              android:id="@+id/memoten"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"/>
+              android:layout_height="wrap_content" />
 
         </LinearLayout>
       </ScrollView>

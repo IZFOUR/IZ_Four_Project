@@ -75,3 +75,34 @@ MypageDetail 구조 잡기. 이것도 아직 연동이 안됨.
 1. MainActivity에서 이미지 클릭하면 해당 이미지와 관련된 데이터 출력
 2. 그리고 이동한 FriendEdit에서 데이터 수정 후 상단 버튼누르면 데이터 저장완료
 3. 멤버 우측에 플로팅액션바 눌러서 멤버추가 후 같은방식으로 데이터 추가후 상단 버튼누르면 데이터 저장됨.
+
+[FEAT] : ⚙️8.17 10:00
+1.이미지추가
+2.회원가입 페이지 수정
+3.회원가입 페이지 스크롤 바 추가
+4.Gray 색상추가
+
+[DESIGN] : 🎨 8.17 pm 05: 06
+1. MyPage: 뒤로가기 버튼의 루프를 없앰, 편집 버튼을 없애고 추가 버튼을 만들어서 MyPageDetail과 연결 시킴.
+2. MyPageDetail: 아직 디자인만 하고 데이터를 저장하지는 못함. 뒤로가기 버튼 활성화.
+
+[FEAT] : ⚙️8.17 17:30
+MyAbilityDetail 스크롤 기능 구현성공.  메모 추가 및 삭제기능 구현예정.  ProgressBar 관련 상호작용 고안중
+
+FIX] : 🔧 08.17 18.27
+MainActivity, FriendEdit 코드 최적화
+
+
+[FEAT] : ⚙️ 8.17 pm7:39분
+1. 로그인 / 회원가입 기능구현
+
+[DESIGN] : 🎨 8.17 pm 10:22
+1. MyPageEdit 디자인 추가
+
+[FEAT] : ⚙️ 8.17 pm 10:45
+1.MainActivity(가로모드 전체스크롤 기능)
+2.FriendEdit(title,content 내용 추가,수정)
+
+[FEAT] : ⚙️ 8.17 pm 11:30
+1. MyAbilityDetail 기능추가
+2. 실수로 메인에 머지했어요 :(
