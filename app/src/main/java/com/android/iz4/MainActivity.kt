@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
         val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val mbtiList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val statusList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val titleList = mutableListOf("","","","","")
+        val contentList = mutableListOf("","","","","")
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,11 +76,15 @@ class MainActivity : AppCompatActivity() {
                         nameList[index] = data.getStringExtra("inputName") ?: ""
                         mbtiList[index] = data.getStringExtra("inputMbti") ?: ""
                         statusList[index] = data.getStringExtra("inputStatus") ?: ""
+                        titleList[index] = data.getStringExtra("inputTitle")?:""
+                        contentList[index] = data.getStringExtra("inputContent") ?:""
 
                         nickList.add(nickList[index] ?: "")
                         nameList.add(nameList[index] ?: "")
                         mbtiList.add(mbtiList[index] ?: "")
                         statusList.add(statusList[index] ?: "")
+                        titleList.add(titleList[index] ?:"")
+                        contentList.add(contentList[index] ?:"")
                     }
                 }
             }
@@ -96,6 +102,8 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("fename", nameList[index])
                     intent.putExtra("fembti", mbtiList[index])
                     intent.putExtra("festatus", statusList[index])
+                    intent.putExtra("fetitle", titleList[index])
+                    intent.putExtra("fecontent", contentList[index])
                     friendresult.launch(intent)
                     overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                 }
