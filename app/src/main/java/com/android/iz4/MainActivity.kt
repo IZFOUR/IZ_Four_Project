@@ -102,24 +102,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-//    fun addbtnList(imgBtnList: MutableList<ImageButton>) {
-//        for ((index, num) in imgBtnList.withIndex()) {
-//            num.setOnClickListener {
-//                if (index < nickList.size && index < nameList.size &&
-//                    index < mbtiList.size && index < statusList.size
-//                ) {
-//                    val intent = Intent(this, FriendEdit::class.java)
-//                    intent.putExtra("index", index)
-//                    intent.putExtra("fenick", nickList[index])
-//                    intent.putExtra("fename", nameList[index])
-//                    intent.putExtra("fembti", mbtiList[index])
-//                    intent.putExtra("festatus", statusList[index])
-//                    friendresult.launch(intent)
-//                    overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
-//                }
-//            }
-//        }
-//    }
 }
 
 

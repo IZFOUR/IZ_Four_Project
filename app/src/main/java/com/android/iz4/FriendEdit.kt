@@ -1,16 +1,19 @@
 package com.android.iz4
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
+import com.squareup.picasso.Picasso
 
 class FriendEdit : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
@@ -58,6 +61,11 @@ class FriendEdit : AppCompatActivity() {
             }else {
                 Toast.makeText(this,"입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             }
+        }
+        val imgclick = findViewById<ImageView>(R.id.feprofile)
+        imgclick.setOnClickListener {
+            val imageUrl = ""
+            Picasso.get().load(imageUrl).into(imgclick)
         }
     }
     override fun onStart() {
