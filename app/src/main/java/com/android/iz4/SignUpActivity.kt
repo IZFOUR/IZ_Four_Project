@@ -1,4 +1,4 @@
-package com.android.project
+package com.android.iz4
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
