@@ -16,16 +16,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     lateinit var friendresult: ActivityResultLauncher<Intent>
+    private lateinit var imgadd: LinearLayout
+    private lateinit var addmemberbtn: FloatingActionButton
     companion object {
         val nickList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val mbtiList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val statusList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val titleList = mutableListOf("","","","","")
+        val contentList = mutableListOf("","","","","")
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val imgBtnList = mutableListOf<ImageButton>(
             findViewById(R.id.mimgbtn1),
@@ -35,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         )
         addbtnList(imgBtnList)
 
-        val imgadd = findViewById<LinearLayout>(R.id.maddimg)
-        val addmemberbtn = findViewById<FloatingActionButton>(R.id.mbtnaddmember)
+        imgadd = findViewById(R.id.maddimg)
+        addmemberbtn = findViewById(R.id.mbtnaddmember)
 
         addmemberbtn.setOnClickListener {
             val imgbtn = ImageButton(this)
@@ -53,7 +56,16 @@ class MainActivity : AppCompatActivity() {
         val btnteam = findViewById<Button>(R.id.mbtnablility)
 
         btnpage.setOnClickListener {
+            val id = intent.getStringExtra("dataFromSignInActivityId")
+            val name = intent.getStringExtra("dataFromSignInActivityName")
+            val age = intent.getStringExtra("dataFromSignInActivityAge")
+            val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
             val intent = Intent(this, MyPage::class.java)
+            intent.putExtra("id",id)
+            intent.putExtra("name",name)
+            intent.putExtra("age",age)
+            intent.putExtra("mbti",mbti)
+
             startActivity(intent)
             overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
         }
@@ -72,18 +84,22 @@ class MainActivity : AppCompatActivity() {
                         nameList[index] = data.getStringExtra("inputName") ?: ""
                         mbtiList[index] = data.getStringExtra("inputMbti") ?: ""
                         statusList[index] = data.getStringExtra("inputStatus") ?: ""
+                        titleList[index] = data.getStringExtra("inputTitle")?:""
+                        contentList[index] = data.getStringExtra("inputContent") ?:""
 
                         nickList.add(nickList[index] ?: "")
                         nameList.add(nameList[index] ?: "")
                         mbtiList.add(mbtiList[index] ?: "")
                         statusList.add(statusList[index] ?: "")
+                        titleList.add(titleList[index] ?:"")
+                        contentList.add(contentList[index] ?:"")
                     }
                 }
             }
         }
     }
     fun addbtnList(imgBtnList: MutableList<ImageButton>) {
-        for ((index, num) in imgBtnList.withIndex()) {
+        imgBtnList.forEachIndexed { index, num ->
             num.setOnClickListener {
                 if (index < nickList.size && index < nameList.size &&
                     index < mbtiList.size && index < statusList.size
@@ -94,6 +110,8 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("fename", nameList[index])
                     intent.putExtra("fembti", mbtiList[index])
                     intent.putExtra("festatus", statusList[index])
+                    intent.putExtra("fetitle", titleList[index])
+                    intent.putExtra("fecontent", contentList[index])
                     friendresult.launch(intent)
                     overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                 }

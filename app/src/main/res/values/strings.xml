@@ -15,7 +15,8 @@
 
     <string name="inputnick">닉네임을 입력하세요</string>
     <string name="inputstatus">상태 메시지를 입력하세요</string>
-
+    <string name="inputtitle">제목을 입력하세요</string>
+    <string name="inputcontent">내용을 입력하세요</string>
     <string name="login">로그인</string>
     <string name="exit">종료</string>
     <string name="signup">회원가입</string>

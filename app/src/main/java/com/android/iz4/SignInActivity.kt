@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.iz4.User
 import com.android.iz4.UserListData
 
-
 class SignInActivity : AppCompatActivity() {
 
     lateinit var signInLauncher: ActivityResultLauncher<Intent>
