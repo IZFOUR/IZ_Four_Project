@@ -24,7 +24,7 @@
             android:text="MyPage"
             android:textStyle="bold"
             android:textColor="@color/Black"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:layout_gravity="center"/>
 
         <ImageButton
@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="25dp"
-        android:text="ID:"
+        android:text=""
         android:textColor="@color/Black"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
@@ -66,9 +66,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
-        android:text="이름:"
+        android:text=""
         android:textColor="@color/Black"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageBorder"
@@ -81,9 +81,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
-        android:text="MBTI:"
+        android:text=""
         android:textColor="@color/Black"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -91,15 +91,15 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <TextView
-        android:id="@+id/tv_talk"
+        android:id="@+id/tv_age"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
-        android:text="한마디:"
+        android:text=""
         android:textColor="@color/Black"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -114,7 +114,7 @@
         android:layout_marginStart="25dp"
         android:background="@drawable/shape_image"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_talk"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
@@ -136,7 +136,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_talk">
+        app:layout_constraintTop_toBottomOf="@+id/imageBorder">
 
         <ScrollView
             android:id="@+id/my_scroll"
@@ -176,7 +176,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="25dp"
                         android:gravity="center_vertical"
-                        android:text="오둥이의 정보"
+                        android:text="@string/MyTv_Today"
                         android:textColor="@color/Black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -192,12 +192,12 @@
                     app:srcCompat="@drawable/safari_lodge" />
 
                 <TextView
-                    android:id="@+id/tv_review"
+                    android:id="@+id/tv_detail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="(2/3일) 가족과 함께 여행 간 사파리의 3박 4일의 펜션 후기"
+                    android:text="@string/MyTv_review"
                     android:textColor="@color/Black"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="normal" />
 
                 <LinearLayout
@@ -223,7 +223,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="25dp"
                         android:gravity="center_vertical"
-                        android:text="오둥이의 정보"
+                        android:text="@string/MyTv_Today2"
                         android:textColor="@color/Black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -231,7 +231,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/iv_puppy"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_marginTop="15dp"
@@ -241,10 +241,10 @@
                     app:srcCompat="@drawable/xuan_nguyen_zr0benrnvgq_unsplash_768x512_1" />
 
                 <TextView
-                    android:id="@+id/tv_review2"
+                    android:id="@+id/tv_detail2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="(3/4일) 우리 가족이 된 멍멍이"
+                    android:text="@string/MyTv_review2"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
                     android:textStyle="normal"
@@ -254,28 +254,6 @@
 
 
         </ScrollView>
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ftActBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/White"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
-        </androidx.appcompat.widget.Toolbar>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
