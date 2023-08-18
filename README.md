@@ -118,5 +118,5 @@ SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까
 1. MyAbilityDetail 메모기능 추가
 2. 메모가 늘어나게 만드는건 덜 만들어졌어요
 
-[FEAT] : ⚙️ 8.18
+[FEAT] : ⚙️ 8.18 pm 1:20
 1. 반복된 코드 및 코드 간략화 user class추가 
