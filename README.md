@@ -137,3 +137,6 @@ SignInActivity ,SignUpActivity 잔잔바리 문구 수정
 
 1.비밀번호를 올바르게 입력하지 않아도 가입되는 버그 수정 
 
+[fix] activity_signup.xml 
+8.18  4.26
+가로모드시, 제일 아래 회원가입 버튼이 잘리는 오류 수정
