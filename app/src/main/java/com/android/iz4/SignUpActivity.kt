@@ -71,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (idcheck) {
                     Toast.makeText(this, "중복된 아이디(이메일)가 존재 합니다.", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "사용 가능한 아이디(이메일) 입니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "사용 가능한 아이디(이메일) 입니다.(다만, 이메일형식이 아닐시 가입이 불가합니다.)", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "아이디(이메일)를 입력해주세요", Toast.LENGTH_SHORT).show()
