@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
                         if (imageUrl.isNotEmpty()) {
                             val imgBtn = imgBtnList[index]
-                            Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(imgBtn)
+                            Picasso.get().load(imageUrl).error(R.drawable.question).into(imgBtn)
                         }
 
                         nickList.add(nickList[index] ?: "")
