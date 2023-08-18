@@ -18,7 +18,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 
 class FriendEdit : AppCompatActivity() {
-        private lateinit var addimg:LinearLayout
+    private lateinit var addimg: LinearLayout
+    private var imageUrl: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
@@ -34,14 +35,16 @@ class FriendEdit : AppCompatActivity() {
         val editstatus = findViewById<EditText>(R.id.feStatusEditView)
         val edittitle = findViewById<EditText>(R.id.feTitleEditView)
         val editcontent = findViewById<EditText>(R.id.feContentEditView)
+        val editimgView = findViewById<ImageView>(R.id.feprofile)
 
         val index = intent.getIntExtra("index", -1)
         val fenick = intent.getStringExtra("fenick") ?: ""
         val fename = intent.getStringExtra("fename") ?: ""
         val fembti = intent.getStringExtra("fembti") ?: ""
         val festatus = intent.getStringExtra("festatus") ?: ""
-        val title = intent.getStringExtra("fetitle") ?:""
-        val content = intent.getStringExtra("fecontent") ?:""
+        val title = intent.getStringExtra("fetitle") ?: ""
+        val content = intent.getStringExtra("fecontent") ?: ""
+        val imgbtn = intent.getStringExtra("imgBtn")?:""
 
         editnick.setText(fenick)
         editname.setText(fename)
@@ -50,10 +53,16 @@ class FriendEdit : AppCompatActivity() {
         edittitle.setText(title)
         editcontent.setText(content)
 
+        if (imageUrl.isNullOrEmpty() && !imgbtn.isEmpty()) {
+            imageUrl = imgbtn
+            Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(editimgView)
+        }
+
+
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
         val viewList = arrayListOf<View>()
-        addButton.setOnClickListener{
+        addButton.setOnClickListener {
             val inflater = LayoutInflater.from(this)
             val item = inflater.inflate(R.layout.additem, addimg, false)
             addimg.addView(item)
@@ -73,31 +82,33 @@ class FriendEdit : AppCompatActivity() {
                 val title1 = it.findViewById<EditText>(R.id.feTitleEditView)
                 val imgView1 = it.findViewById<ImageView>(R.id.feaddimgView)
                 val content1 = it.findViewById<EditText>(R.id.feContentEditView)
-                Log.d("view",title1.text.toString())
+                Log.d("view", title1.text.toString())
             }
-            if(!nick.isEmpty() && !name.isEmpty() && !mbti.isEmpty() && !status.isEmpty()){
+            if (!nick.isEmpty() && !name.isEmpty() && !mbti.isEmpty() && !status.isEmpty()) {
 
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("index", index)
-                intent.putExtra("inputName",name)
-                intent.putExtra("inputNick",nick)
-                intent.putExtra("inputMbti",mbti)
-                intent.putExtra("inputStatus",status)
-                intent.putExtra("inputTitle",title)
-                intent.putExtra("inputContent",content)
+                intent.putExtra("inputName", name)
+                intent.putExtra("inputNick", nick)
+                intent.putExtra("inputMbti", mbti)
+                intent.putExtra("inputStatus", status)
+                intent.putExtra("inputTitle", title)
+                intent.putExtra("inputContent", content)
+                intent.putExtra("imageUrl", imageUrl)
 
-                setResult(RESULT_OK,intent)
+                setResult(RESULT_OK, intent)
                 finish()
-            }else {
-                Toast.makeText(this,"입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             }
         }
         val imgclick = findViewById<ImageView>(R.id.feprofile)
         imgclick.setOnClickListener {
-           dialog(imgclick)
+            dialog(imgclick)
         }
     }
-    private fun dialog(imgView: ImageView){
+
+    private fun dialog(imgView: ImageView) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("URL을 입력 하세요.")
 
@@ -105,8 +116,8 @@ class FriendEdit : AppCompatActivity() {
         builder.setView(inputEditText)
 
         builder.setPositiveButton("확인") { dialog, which ->
-            val imageUrl = inputEditText.text.toString()
-            if (imageUrl.isNotEmpty()) {
+            imageUrl = inputEditText.text.toString()
+            if (!imageUrl.isNullOrEmpty()) {
                 Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(imgView)
             }
         }
@@ -115,6 +126,7 @@ class FriendEdit : AppCompatActivity() {
         val dialog = builder.create()
         dialog.show()
     }
+
     override fun onStart() {
         super.onStart()
         Log.d("Lifecycle", "onStart")
