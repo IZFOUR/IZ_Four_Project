@@ -3,9 +3,13 @@ package com.android.iz4
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.android.iz4.User
+import com.android.iz4.UserListData
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -13,13 +17,52 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val edit_name2 = findViewById<EditText>(R.id.suIdEditView)
-        val edit_id2 = findViewById<EditText>(R.id.suNameEditView)
+        val edit_name2 = findViewById<EditText>(R.id.suNameEditView)
+        val edit_id2 = findViewById<EditText>(R.id.suIdEditView)
         val edit_psw2 = findViewById<EditText>(R.id.suPwEditView)
         val edit_age2 = findViewById<EditText>(R.id.suAgeEditView)
         val edit_mbti2 = findViewById<EditText>(R.id.suMbtiEditView)
         val button_calljoin2_2 = findViewById<Button>(R.id.subtnjoin)
         val btn_check = findViewById<Button>(R.id.btncheck)
+
+        fun isValidEmail(email: String): Boolean {
+            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+            return email.matches(emailPattern.toRegex())
+        }
+        // 실시간 이메일 유효성 검사
+        edit_id2.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (!isValidEmail(s.toString())) {
+                    edit_id2.error = "올바른 이메일 주소를 입력하세요."
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        // 비밀번호 유효성 검사 함수 / 8자 이상이며 숫자 + 영문이어야함(최소 1개씩)
+        fun isValidPassword(password: String): Boolean {
+            return password.length >= 8 && password.any { it.isDigit() } && password.any { it.isLetter() }
+        }
+
+        // 실시간 비밀번호 유효성 검사
+        edit_psw2.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                if (!isValidPassword(s.toString())) {
+                    edit_psw2.error = "올바른 비밀번호를 입력하세요."
+                }
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
 
         btn_check.setOnClickListener {
             val id2 = edit_id2.text.toString()
@@ -63,6 +106,6 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun idCheck(id: String): Boolean {
-        return SignInActivity.userList.any { it.id == id }
+        return UserListData.userList.any { it.id == id }
     }
 }
