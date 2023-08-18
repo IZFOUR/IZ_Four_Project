@@ -55,9 +55,8 @@ class FriendEdit : AppCompatActivity() {
 
         if (imageUrl.isNullOrEmpty() && !imgbtn.isEmpty()) {
             imageUrl = imgbtn
-            Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(editimgView)
+            Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
         }
-
 
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
@@ -118,7 +117,7 @@ class FriendEdit : AppCompatActivity() {
         builder.setPositiveButton("확인") { dialog, which ->
             imageUrl = inputEditText.text.toString()
             if (!imageUrl.isNullOrEmpty()) {
-                Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(imgView)
+                Picasso.get().load(imageUrl).error(R.drawable.question).into(imgView)
             }
         }
         builder.setNegativeButton("취소") { dialog, which ->
