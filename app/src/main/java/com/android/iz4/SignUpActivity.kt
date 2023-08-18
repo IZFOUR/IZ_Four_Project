@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
         edit_psw2.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (!isValidPassword(s.toString())) {
-                    edit_psw2.error = "올바른 비밀번호를 입력하세요."
+                    edit_psw2.error = "올바른 비밀번호를 입력하세요.(숫자,영문 최소1개 이상)."
                 }
             }
 
@@ -88,6 +88,10 @@ class SignUpActivity : AppCompatActivity() {
             if (name2.isNotBlank() && id2.isNotBlank() && psw2.isNotBlank() && age2.isNotBlank() && mbti2.isNotBlank()) {
                 if (idCheck(id2)) {
                     Toast.makeText(this, "아이디(이메일)가 중복됩니다.", Toast.LENGTH_SHORT).show()
+                } else if (!isValidEmail(id2)) { // 이메일 유효성 검사 추가
+                    Toast.makeText(this, "올바른 이메일 주소를 입력하세요.", Toast.LENGTH_SHORT).show()
+                } else if (!isValidPassword(psw2)) { // 비밀번호 유효성 검사 추가
+                    Toast.makeText(this, "올바른 비밀번호를 입력하세요.(숫자,영문 최소1개 이상)", Toast.LENGTH_SHORT).show()
                 } else {
                     val intent2_1 = Intent().apply {
                         putExtra("dataFromSignUpActivityName", name2)
