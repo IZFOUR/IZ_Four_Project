@@ -69,12 +69,12 @@ class SignUpActivity : AppCompatActivity() {
             val idcheck = idCheck(id2)
             if (!id2.isEmpty()) {
                 if (idcheck) {
-                    Toast.makeText(this, "중복된 아이디가 존재 합니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "중복된 아이디(이메일)가 존재 합니다.", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "사용 가능한 아이디 입니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "사용 가능한 아이디(이메일) 입니다.", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "아이디를 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "아이디(이메일)를 입력해주세요", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -87,7 +87,7 @@ class SignUpActivity : AppCompatActivity() {
 
             if (name2.isNotBlank() && id2.isNotBlank() && psw2.isNotBlank() && age2.isNotBlank() && mbti2.isNotBlank()) {
                 if (idCheck(id2)) {
-                    Toast.makeText(this, "아이디가 중복됩니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "아이디(이메일)가 중복됩니다.", Toast.LENGTH_SHORT).show()
                 } else {
                     val intent2_1 = Intent().apply {
                         putExtra("dataFromSignUpActivityName", name2)
