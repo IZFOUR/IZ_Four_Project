@@ -126,3 +126,6 @@ SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까
 1.전체적 코드 수정, 
 2.이메일(id)유효성검사 및 비밀번호 8자리 (숫자+영문) 유효성 검사 추가 , 
 3. UserData.kt추가 UserDataList.kt추가
+
+[fix]
+SignInActivity : 아이디 > 이메일로 문구교체 
