@@ -113,3 +113,7 @@ MainActivity, FriendEdit 코드 최적화
 
 [FEAT] : ⚙️ 8.18 am 05:00
 SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까지 전달 Log.d 달아놨으니 확인
+
+[FEAT] : ⚙️ 8.18 am 11:50
+1. MyAbilityDetail 메모기능 추가
+2. 메모가 늘어나게 만드는건 덜 만들어졌어요
