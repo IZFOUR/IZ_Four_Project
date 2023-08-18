@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val communication = findViewById<LinearLayout>(R.id.communication)
+
+
+
+
         val imgBtnList = mutableListOf<ImageButton>(
             findViewById(R.id.mimgbtn1),
             findViewById(R.id.mimgbtn2),

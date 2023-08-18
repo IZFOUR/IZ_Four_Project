@@ -6,7 +6,7 @@
     android:padding="10dp">
 
     <EditText
-        android:id="@+id/feTitleEditView"
+        android:id="@+id/feTitleEditView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/inputtitle"
@@ -14,13 +14,14 @@
         android:textSize="15sp" />
 
     <ImageView
+        android:id="@+id/feaddimgView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:src="@drawable/iz4_background7" />
 
     <EditText
-        android:id="@+id/feContentEditView"
+        android:id="@+id/feContentEditView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
