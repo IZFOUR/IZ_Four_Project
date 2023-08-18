@@ -170,3 +170,6 @@ MainActivity, FriendEdit
 3.MyPageDetail: text 정보를 MyPage로 옮기기 성공 하지만 Detail 페이지의 정보는 사라짐.
 4.MyPage: 화면을 돌렸을때 개인 정보 창은 스크롤이 안된다. 2번째 contain은 밑에 힌색 부분이고 보라색 배경이 처음 배경이다.
 5.MyPage: 프로필 사진이 변경이 되지 않는다.
+
+[DESIGN] : 🎨 8.19 am 08:05
+activity_main 게시판 프로필사진,이름,이미지,내용 추가
