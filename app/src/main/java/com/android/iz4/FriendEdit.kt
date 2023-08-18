@@ -1,5 +1,6 @@
 package com.android.iz4
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -51,11 +52,12 @@ class FriendEdit : AppCompatActivity() {
 
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
+        val viewList = arrayListOf<View>()
         addButton.setOnClickListener{
             val inflater = LayoutInflater.from(this)
             val item = inflater.inflate(R.layout.additem, addimg, false)
-
             addimg.addView(item)
+            viewList.add(item)
         }
 
         val btnedit = findViewById<Button>(R.id.febtnedit)
@@ -67,6 +69,12 @@ class FriendEdit : AppCompatActivity() {
             val title = edittitle.text.toString()
             val content = editcontent.text.toString()
 
+            viewList.forEach {
+                val title1 = it.findViewById<EditText>(R.id.feTitleEditView)
+                val imgView1 = it.findViewById<ImageView>(R.id.feaddimgView)
+                val content1 = it.findViewById<EditText>(R.id.feContentEditView)
+                Log.d("view",title1.text.toString())
+            }
             if(!nick.isEmpty() && !name.isEmpty() && !mbti.isEmpty() && !status.isEmpty()){
 
                 val intent = Intent(this, MainActivity::class.java)
@@ -77,6 +85,7 @@ class FriendEdit : AppCompatActivity() {
                 intent.putExtra("inputStatus",status)
                 intent.putExtra("inputTitle",title)
                 intent.putExtra("inputContent",content)
+
                 setResult(RESULT_OK,intent)
                 finish()
             }else {
@@ -85,9 +94,26 @@ class FriendEdit : AppCompatActivity() {
         }
         val imgclick = findViewById<ImageView>(R.id.feprofile)
         imgclick.setOnClickListener {
-            val imageUrl = ""
-            Picasso.get().load(imageUrl).into(imgclick)
+           dialog(imgclick)
         }
+    }
+    private fun dialog(imgView: ImageView){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("URL을 입력 하세요.")
+
+        val inputEditText = EditText(this)
+        builder.setView(inputEditText)
+
+        builder.setPositiveButton("확인") { dialog, which ->
+            val imageUrl = inputEditText.text.toString()
+            if (imageUrl.isNotEmpty()) {
+                Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(imgView)
+            }
+        }
+        builder.setNegativeButton("취소") { dialog, which ->
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
     override fun onStart() {
         super.onStart()
