@@ -140,3 +140,6 @@ SignInActivity ,SignUpActivity 잔잔바리 문구 수정
 [fix] activity_signup.xml 
 8.18  4.26
 가로모드시, 제일 아래 회원가입 버튼이 잘리는 오류 수정
+
+[fix] activity_signup.xml 
+비밀번호 주의문구 수정 / 8자이상이라고 안씀 > 썼음 
