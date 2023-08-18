@@ -129,3 +129,6 @@ SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까
 
 [fix] 8.18 3.45
 SignInActivity : 아이디 > 이메일로 문구교체 
+
+[fix] 8.18 3.51
+SignInActivity ,SignUpActivity 잔잔바리 문구 수정
