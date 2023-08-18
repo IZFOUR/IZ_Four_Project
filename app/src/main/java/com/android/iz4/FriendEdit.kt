@@ -25,6 +25,7 @@ class FriendEdit : AppCompatActivity() {
         setContentView(R.layout.activity_friendedit)
         Log.d("Lifecycle", "onCreate")
 
+
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
         febtnback.setOnClickListener {
             finish()
@@ -44,7 +45,7 @@ class FriendEdit : AppCompatActivity() {
         val festatus = intent.getStringExtra("festatus") ?: ""
         val title = intent.getStringExtra("fetitle") ?: ""
         val content = intent.getStringExtra("fecontent") ?: ""
-        val imgbtn = intent.getStringExtra("imgBtn")?:""
+        imageUrl = intent.getStringExtra("imgBtn") ?: ""
 
         editnick.setText(fenick)
         editname.setText(fename)
@@ -53,10 +54,16 @@ class FriendEdit : AppCompatActivity() {
         edittitle.setText(title)
         editcontent.setText(content)
 
-        if (imageUrl.isNullOrEmpty() && !imgbtn.isEmpty()) {
-            imageUrl = imgbtn
+    if (!imageUrl.isNullOrEmpty()) {
+        val resourceId = resources.getIdentifier(imageUrl, "drawable", packageName)
+        if (resourceId != 0) {
+            Picasso.get().load(resourceId).error(R.drawable.question).into(editimgView)
+        } else {
             Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
         }
+    } else {
+        editimgView.setImageResource(R.drawable.question)
+    }
 
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
