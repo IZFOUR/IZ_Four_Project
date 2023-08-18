@@ -152,3 +152,8 @@ SignInActivity ,SignUpActivity 잔잔바리 문구 수정
 
 
 [fix] 중복확인시, 이메일 형식이 아니면 , 가입불가 문구 수정 
+
+[FEAT] : ⚙️ 8.18 pm 6:18
+1. FriendEdit에서 프로필사진변경한 후 저장버튼을 누르면
+2. MainActivity에서 FriendEdit로 들어갈떄 클릭했던 이미지버튼의 이미지 역시 FriendEdit에서 변경한 이미지로 바뀜
+3. 다시 FriendEdit로 들어가면 변경했던 이미지가 그대로 유지됨.
