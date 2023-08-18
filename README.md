@@ -163,3 +163,10 @@ MainActivity, FriendEdit
 1.양쪽 왔다갔다 할때 프로필 사진 출력
 2.초기 사진도 출력됨
 3.프로필 사진 수정 기능 구현
+
+[FEAT] : ⚙️ 8.19 am 05:50
+1.MyPage: 이미지에서 MyPageDetail로 가게 만듬.
+2.MyPage: 개인 정보 출력
+3.MyPageDetail: text 정보를 MyPage로 옮기기 성공 하지만 Detail 페이지의 정보는 사라짐.
+4.MyPage: 화면을 돌렸을때 개인 정보 창은 스크롤이 안된다. 2번째 contain은 밑에 힌색 부분이고 보라색 배경이 처음 배경이다.
+5.MyPage: 프로필 사진이 변경이 되지 않는다.
