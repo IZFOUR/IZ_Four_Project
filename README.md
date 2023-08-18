@@ -132,3 +132,8 @@ SignInActivity : 아이디 > 이메일로 문구교체
 
 [fix] 8.18 3.51
 SignInActivity ,SignUpActivity 잔잔바리 문구 수정
+
+[fix] SignUpActivity  8.18 4.08
+
+1.비밀번호를 올바르게 입력하지 않아도 가입되는 버그 수정 
+
