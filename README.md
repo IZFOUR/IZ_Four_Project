@@ -158,7 +158,7 @@ SignInActivity ,SignUpActivity 잔잔바리 문구 수정
 2. MainActivity에서 FriendEdit로 들어갈떄 클릭했던 이미지버튼의 이미지 역시 FriendEdit에서 변경한 이미지로 바뀜
 3. 다시 FriendEdit로 들어가면 변경했던 이미지가 그대로 유지됨.
 
-FIX] : 🔧 08.19 am 5:36
+[FIX] : 🔧 08.19 am 5:36
 MainActivity, FriendEdit 
 1.양쪽 왔다갔다 할때 프로필 사진 출력
 2.초기 사진도 출력됨
