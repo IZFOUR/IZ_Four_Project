@@ -127,19 +127,25 @@ SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까
 2.이메일(id)유효성검사 및 비밀번호 8자리 (숫자+영문) 유효성 검사 추가 , 
 3. UserData.kt추가 UserDataList.kt추가
 
-[fix] 8.18 3.45
+[fix]  🔧 8.18 3.45
 SignInActivity : 아이디 > 이메일로 문구교체 
 
-[fix] 8.18 3.51
+[fix]  🔧 8.18 3.51
 SignInActivity ,SignUpActivity 잔잔바리 문구 수정
 
-[fix] SignUpActivity  8.18 4.08
+[fix]  🔧 SignUpActivity  8.18 4.08
 
 1.비밀번호를 올바르게 입력하지 않아도 가입되는 버그 수정 
 
-[fix] activity_signup.xml 
+[fix]  🔧 activity_signup.xml 
 8.18  4.26
 가로모드시, 제일 아래 회원가입 버튼이 잘리는 오류 수정
 
-[fix] activity_signup.xml 
+[fix]  🔧 activity_signup.xml 
 비밀번호 주의문구 수정 / 8자이상이라고 안씀 > 썼음 
+
+[FEAT] ⚙️ 8.18 pm 4:40
+1. 프로필사진클릭 시 다이얼로그 출력
+2. 다이얼로그에 url입력 시 
+3. 재대로된 url입력하면 이미지 바뀜
+4. 잘 못된 url입력하면 에러이미지로 바뀜
