@@ -45,6 +45,7 @@ class FriendEdit : AppCompatActivity() {
         val festatus = intent.getStringExtra("festatus") ?: ""
         val title = intent.getStringExtra("fetitle") ?: ""
         val content = intent.getStringExtra("fecontent") ?: ""
+        Log.d("AAAAAAAA",fenick)
         imageUrl = intent.getStringExtra("imgBtn") ?: ""
 
         editnick.setText(fenick)
