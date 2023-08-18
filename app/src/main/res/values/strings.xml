@@ -25,4 +25,17 @@
     <string name="check">중복확인</string>
     <string name="save">저장</string>
     <string name="welcome">\t님 환영합니다.</string>
+    <string name="MyTv_Today">오둥이의 정보</string>
+    <string name="MyTv_review">(2/3일) 가족과 함께 여행 간 사파리의 3박 4일의 펜션 후기</string>
+    <string name="MyTv_review2">(3/4일) 우리 가족이 된 멍멍이</string>
+    <string name="MyTv_Today2">오둥이의 정보</string>
+    <string name="Tv_MyPgDt">MyPageDetail</string>
+    <string name="MyIb_AddMemo">저장</string>
+    <string name="MyTv_MyTtl">제목을 입력해주세요.</string>
+    <string name="MyEt_MyStt">월/일: 간단한 설명을 적어주세요.</string>
+    <string name="MyEt_MyDt">내용을 입력해주세요.</string>
+    <array name="bamin1">
+        <item>@drawable/odung_smile</item>
+        <item>@drawable/woman_phone</item>
+    </array>
 </resources>
