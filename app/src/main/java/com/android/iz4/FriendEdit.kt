@@ -58,7 +58,6 @@ class FriendEdit : AppCompatActivity() {
             Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
         }
 
-
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
         val viewList = arrayListOf<View>()

@@ -47,7 +47,7 @@
                     android:layout_marginRight="15dp"
                     android:onClick="feImageClicked"
                     android:padding="10dp"
-                    app:srcCompat="@drawable/zz" />
+                    app:srcCompat="@drawable/character2" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

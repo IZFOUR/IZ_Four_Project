@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Nickname
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -21,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addmemberbtn: FloatingActionButton
     private var imageUrl: String = ""
     companion object {
-        val nickList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
-        val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
-        val mbtiList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
-        val statusList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
+        val nickList = mutableListOf("팀원", "팀원", "팀원", "팀장","")
+        val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수","")
+        val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ","")
+        val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!","")
         val titleList = mutableListOf("","","","","")
         val contentList = mutableListOf("","","","","")
 
@@ -98,7 +99,18 @@ class MainActivity : AppCompatActivity() {
 
                         if (imageUrl.isNotEmpty()) {
                             val imgBtn = imgBtnList[index]
+                            val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
+                            val commu_img2 = findViewById<ImageView>(R.id.commu_img2)
+                            val commu_name1 = findViewById<EditText>(R.id.commu_name1)
+                            val commu_name2 = findViewById<EditText>(R.id.commu_name2)
                             Picasso.get().load(imageUrl).error(R.drawable.question).into(imgBtn)
+                            if (index == 0) {
+                                Picasso.get().load(imageUrl).error(R.drawable.question).into(commu_img1)
+                                commu_name1.setText(nameList[index])
+                            } else if (index == 1) {
+                                Picasso.get().load(imageUrl).error(R.drawable.question).into(commu_img2)
+                                commu_name2.setText(nameList[index])
+                            }
                         }
 
                         nickList.add(nickList[index] ?: "")
