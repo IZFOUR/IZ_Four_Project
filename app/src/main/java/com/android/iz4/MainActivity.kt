@@ -13,11 +13,13 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
     lateinit var friendresult: ActivityResultLauncher<Intent>
     private lateinit var imgadd: LinearLayout
     private lateinit var addmemberbtn: FloatingActionButton
+    private var imageUrl: String = ""
     companion object {
         val nickList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val nameList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val statusList = mutableListOf("aaa", "bbb", "ccc", "ddd","")
         val titleList = mutableListOf("","","","","")
         val contentList = mutableListOf("","","","","")
+
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,6 +94,12 @@ class MainActivity : AppCompatActivity() {
                         statusList[index] = data.getStringExtra("inputStatus") ?: ""
                         titleList[index] = data.getStringExtra("inputTitle")?:""
                         contentList[index] = data.getStringExtra("inputContent") ?:""
+                        imageUrl = data.getStringExtra("imageUrl") ?:""
+
+                        if (imageUrl.isNotEmpty()) {
+                            val imgBtn = imgBtnList[index]
+                            Picasso.get().load(imageUrl).error(R.drawable.odung_smile).into(imgBtn)
+                        }
 
                         nickList.add(nickList[index] ?: "")
                         nameList.add(nameList[index] ?: "")
@@ -117,6 +126,7 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("festatus", statusList[index])
                     intent.putExtra("fetitle", titleList[index])
                     intent.putExtra("fecontent", contentList[index])
+                    intent.putExtra("imgBtn",imageUrl)
                     friendresult.launch(intent)
                     overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                 }
