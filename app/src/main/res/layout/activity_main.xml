@@ -92,7 +92,7 @@
                     android:layout_height="90dp"
                     android:background="@drawable/round"
                     android:clipToOutline="true"
-                    android:scaleType="centerInside"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/character2" />
 
                 <ImageButton
@@ -101,7 +101,7 @@
                     android:layout_height="90dp"
                     android:background="@drawable/round"
                     android:clipToOutline="true"
-                    android:scaleType="centerInside"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/character7" />
 
                 <ImageButton
@@ -110,7 +110,7 @@
                     android:layout_height="90dp"
                     android:background="@drawable/round"
                     android:clipToOutline="true"
-                    android:scaleType="centerInside"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/character11" />
 
                 <ImageButton
@@ -119,7 +119,7 @@
                     android:layout_height="90dp"
                     android:background="@drawable/round"
                     android:clipToOutline="true"
-                    android:scaleType="centerInside"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/character1" />
 
 
@@ -168,7 +168,7 @@
                         android:layout_marginStart="10dp"
                         android:background="@drawable/round"
                         android:clipToOutline="true"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         app:srcCompat="@drawable/character2" />
 
                     <EditText
@@ -208,7 +208,7 @@
                         android:layout_marginStart="10dp"
                         android:background="@drawable/round"
                         android:clipToOutline="true"
-                        android:scaleType="centerInside"
+                        android:scaleType="centerCrop"
                         app:srcCompat="@drawable/character7" />
 
                     <EditText

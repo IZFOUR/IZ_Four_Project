@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         addmemberbtn.setOnClickListener {
             val imgbtn = ImageButton(this)
-            imgbtn.scaleType = ImageView.ScaleType.CENTER_INSIDE
+            imgbtn.scaleType = ImageView.ScaleType.CENTER_CROP
             imgbtn.clipToOutline = true
             imgbtn.setBackgroundResource(R.drawable.round)
             imgbtn.setImageResource(R.drawable.zz)
