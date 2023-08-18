@@ -120,3 +120,9 @@ SignUpActivity 에서 회원가입할때 입력한 id,name,age,mbti를 MyPage까
 
 [FEAT] : ⚙️ 8.18 pm 1:20
 1. 반복된 코드 및 코드 간략화 user class추가 
+
+
+[FEAT] : ⚙️ 8.18 pm 3.33
+1.전체적 코드 수정, 
+2.이메일(id)유효성검사 및 비밀번호 8자리 (숫자+영문) 유효성 검사 추가 , 
+3. UserData.kt추가 UserDataList.kt추가
