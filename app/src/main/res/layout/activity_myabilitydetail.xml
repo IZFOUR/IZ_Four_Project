@@ -87,7 +87,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:progress="77"
+            android:progress="80"
             app:layout_constraintBottom_toTopOf="@+id/AProcess"
             app:layout_constraintTop_toBottomOf="@+id/ADeadLine"
             app:layout_constraintVertical_bias="0.5"
