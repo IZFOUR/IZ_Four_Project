@@ -117,3 +117,6 @@ class SignInActivity : AppCompatActivity() {
             }
     }
 }
+object UserListData {
+    val userList: MutableList<User> = mutableListOf()
+}

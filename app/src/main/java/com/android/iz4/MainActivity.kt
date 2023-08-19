@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -91,30 +92,45 @@ class MainActivity : AppCompatActivity() {
             edit_content3.setText(contentList[2])
         }
 
-        val btnpage = findViewById<Button>(R.id.mbtnpage)
-        val btnteam = findViewById<Button>(R.id.mbtnablility)
+        val btnmenu = findViewById<ImageButton>(R.id.btnmenu)
         val profile_name =findViewById<TextView>(R.id.mname)
 
-        btnpage.setOnClickListener {
-            val id = intent.getStringExtra("dataFromSignInActivityId")
-            val name = intent.getStringExtra("dataFromSignInActivityName")
-            val age = intent.getStringExtra("dataFromSignInActivityAge")
-            val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
-            val intent = Intent(this, MyPage::class.java)
-            intent.putExtra("id", id)
-            intent.putExtra("name", name)
-            intent.putExtra("age", age)
-            intent.putExtra("mbti", mbti)
-            profile_name.setText(name)
+        btnmenu.setOnClickListener { view ->
+            val Menu = PopupMenu(this, view)
+            Menu.menuInflater.inflate(R.menu.menu, Menu.menu)
 
-            startActivity(intent)
-            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+            Menu.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_item_1 -> {
+                        val id = intent.getStringExtra("dataFromSignInActivityId")
+                        val name = intent.getStringExtra("dataFromSignInActivityName")
+                        val age = intent.getStringExtra("dataFromSignInActivityAge")
+                        val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
+
+                        val intent = Intent(this, MyPage::class.java).apply {
+                            putExtra("id", id)
+                            putExtra("name", name)
+                            putExtra("age", age)
+                            putExtra("mbti", mbti)
+                        }
+
+                        profile_name.text = name
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+                        true
+                    }
+                    R.id.menu_item_2 -> {
+                        val intent = Intent(this, MyAbility::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+                        true
+                    }
+                    else -> false
+                }
+            }
+            Menu.show()
         }
-        btnteam.setOnClickListener {
-            val intent = Intent(this, MyAbility::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
-        }
+
         friendresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
                 val data = it.data
