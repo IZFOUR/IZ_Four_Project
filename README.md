@@ -182,3 +182,6 @@ activity_main 게시판 프로필사진,이름,이미지,내용 추가
 🔧 ⚙️🐛 : 8.19 pm 6:51 ★★진주님 SignInActivity 수정했습니다 object UserListData를 SignInActivity내부로 옴겼어요★★
 FIX] : 🔧 뒤로가기 버튼 추가 //FIX] : 🐛 이미지버튼추가 형식 통일
 FIX] : 🔧 MainActivity에서 MyPage,MyAbility로 넘어가는 버튼형식을 메뉴 팝업형태로 바꿈
+
+[FEAT] : ⚙️ 8.19 pm 7:25
+MyAbilityDetail페이지 ProgressBar 일부 수정
