@@ -29,7 +29,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginStart="25dp"
                     android:background="@android:color/transparent"
                     android:clickable="true"
                     android:onClick="click"
@@ -38,24 +37,26 @@
                     app:srcCompat="?attr/homeAsUpIndicator" />
 
                 <TextView
+                    android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/Tv_MyPgDt"
-                    android:textColor="@color/Black"
-                    android:textSize="20dp"
-                    android:textStyle="normal" />
+                    android:gravity="center"
+                    android:text="My Page Edit IZ * FOUR"
+                    android:textColor="@color/Blue400"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btn_addmemo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginEnd="10dp"
-                    android:background="@android:color/transparent"
                     android:text="@string/MyIb_AddMemo"
-                    android:textColor="@color/Black"
-                    android:textSize="20sp"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -82,23 +83,22 @@
                     android:id="@+id/et_today"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="25dp"
+                    android:layout_marginStart="10dp"
                     android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:hint="@string/MyTv_MyTtl"
-                    android:text=""
                     android:textColor="@color/Black"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/iv_myimage"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="15dp"
+                android:layout_gravity="center"
                 android:background="@drawable/mypagedetail_stroke"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,9 +111,9 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="@string/MyEt_MyStt"
-                android:text=""
                 android:textColor="@color/Black"
-                android:textSize="20sp"
+                android:gravity="center"
+                android:textSize="15sp"
                 android:textStyle="normal" />
 
             <EditText
@@ -126,9 +126,9 @@
                 android:layout_marginBottom="10dp"
                 android:background="@android:color/transparent"
                 android:hint="@string/MyEt_MyDt"
-                android:text=""
+                android:gravity="center"
                 android:textColor="@color/Black"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="normal" />
 
 

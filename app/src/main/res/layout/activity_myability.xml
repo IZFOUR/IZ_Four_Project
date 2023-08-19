@@ -5,22 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyAbility">
+
     <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbar"
-        android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/Black"
-            android:textSize="20dp"
-            android:text="Test area">
-
-        </TextView>
+            android:gravity="center"
+            android:text="My Ability IZ * FOUR"
+            android:textColor="@color/Blue400"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -72,8 +77,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="팀A 프로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
                     tools:layout_editor_absoluteY="16dp">
@@ -85,7 +90,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:text="편집"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/Atoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Atoolbar"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -110,7 +117,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
                     tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="29dp" />
+                    tools:layout_editor_absoluteX="32dp" />
 
                 <ProgressBar
                     android:id="@+id/ABarDeadLine"
@@ -170,9 +177,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="팀B 프ㅁㄴㅇ로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:text="팀B 프로젝트"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
                     tools:layout_editor_absoluteY="16dp">
@@ -184,7 +191,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:text="편집"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/Btoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Btoolbar"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -269,8 +278,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="팀C 프로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
                     tools:layout_editor_absoluteY="16dp">
@@ -282,7 +291,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:text="편집"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/Ctoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Ctoolbar"
                     app:layout_constraintTop_toTopOf="parent"/>
