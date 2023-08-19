@@ -55,16 +55,16 @@ class FriendEdit : AppCompatActivity() {
         edittitle.setText(title)
         editcontent.setText(content)
 
-    if (!imageUrl.isNullOrEmpty()) {
-        val resourceId = resources.getIdentifier(imageUrl, "drawable", packageName)
-        if (resourceId != 0) {
-            Picasso.get().load(resourceId).error(R.drawable.question).into(editimgView)
+        if (imageUrl.isNullOrEmpty()) {
+            editimgView.setImageResource(R.drawable.question)
         } else {
-            Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
+            val resourceId = resources.getIdentifier(imageUrl, "drawable", packageName)
+            if (resourceId != 0) {
+                Picasso.get().load(resourceId).error(R.drawable.question).into(editimgView)
+            } else {
+                Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
+            }
         }
-    } else {
-        editimgView.setImageResource(R.drawable.question)
-    }
 
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
@@ -101,7 +101,11 @@ class FriendEdit : AppCompatActivity() {
                 intent.putExtra("inputStatus", status)
                 intent.putExtra("inputTitle", title)
                 intent.putExtra("inputContent", content)
-                intent.putExtra("imageUrl", imageUrl)
+                if (imageUrl != null && imageUrl!!.isNotEmpty()) {
+                    intent.putExtra("imageUrl", imageUrl)
+                }
+
+
 
                 setResult(RESULT_OK, intent)
                 finish()
