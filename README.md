@@ -193,3 +193,6 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 2.다시 MyAbility로 돌아왔을때 수정된 부분적용
 3. 다시 MyAbilityDetail로 들어갔을때 역시 수정된부분 적용완료
 4. 색깔부분 첨가
+
+[FEAT] : ⚙️ 8.20 am 03:14
+1. MyAbilityDetail 에서 작성하고 저장한 메모 MyAbility에 갔다가 돌아와도 유지 됨
