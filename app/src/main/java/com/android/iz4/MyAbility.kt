@@ -22,7 +22,9 @@ class MyAbility : AppCompatActivity() {
         val titleList = mutableListOf("팀A프로젝트", "팀B프로젝트", "팀C프로젝트")
         var progressnumList = mutableListOf("0","0","0")
         val deadlinenumList = mutableListOf("0","0","0")
-        val MemoList = mutableListOf("","","","","","","","","","")
+        val MemoList1 = mutableListOf("", "", "", "", "", "", "", "", "", "")
+        val MemoList2 = mutableListOf("", "", "", "", "", "", "", "", "", "")
+        val MemoList3 = mutableListOf("", "", "", "", "", "", "", "", "", "")
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +55,11 @@ class MyAbility : AppCompatActivity() {
                 intent.putExtra("abtitle", titleList[index])
                 intent.putExtra("abprogressnum", progressnumList[index])
                 intent.putExtra("abdeadline", deadlinenumList [index])
-                intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList))
+                when (index) {
+                    0 -> intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList1))
+                    1 -> intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList2))
+                    2 -> intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList3))
+                }
                 Log.d("LifecycleMyAbility",progressnumList[index])
                 abilityresult.launch(intent)
             }
@@ -68,10 +74,20 @@ class MyAbility : AppCompatActivity() {
 //                        deadlinenumList[index] = data.getStringExtra("abddeadlinenum") ?: ""
                         val abdmemoList = data.getStringArrayListExtra("abdmemoList")
                         if (abdmemoList != null) {
-                            MemoList.clear()
-                            MemoList.addAll(abdmemoList)
+                            when (index) {
+                                0 -> MemoList1.clear()
+                                1 -> MemoList2.clear()
+                                2 -> MemoList3.clear()
+                            }
+                            abdmemoList.forEachIndexed { i, memo ->
+                                when (index) {
+                                    0 -> MemoList1.add(i, memo)
+                                    1 -> MemoList2.add(i, memo)
+                                    2 -> MemoList3.add(i, memo)
+                                }
+                            }
                         }
-                        Log.d("LifecycleMyAbility","메모리스트 : ${MemoList[index]}")
+
                         progressnumList.add( progressnumList[index] ?: "")
                         deadlinenumList.add( deadlinenumList[index] ?: "")
 

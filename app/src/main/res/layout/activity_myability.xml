@@ -219,7 +219,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/BProcess"
                     app:layout_constraintTop_toBottomOf="@+id/BDeadLine"
                     app:layout_constraintVertical_bias="0.5"
-                    android:progress="80"
+                    android:progress="48"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
