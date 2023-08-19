@@ -185,3 +185,11 @@ FIX] : 🔧 MainActivity에서 MyPage,MyAbility로 넘어가는 버튼형식을 
 
 [FEAT] : ⚙️ 8.19 pm 7:25
 MyAbilityDetail페이지 ProgressBar 일부 수정
+
+[CONFLICT] : 💥🚚 8.20 am 01:23
+FIX] : 🔧 MainActivity 앞에서 받아온name표시,레이아웃조정
+FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
+1.MyAbility 에서 MyAbilityDetail로 들어가서 progressbar수정후
+2.다시 MyAbility로 돌아왔을때 수정된 부분적용
+3. 다시 MyAbilityDetail로 들어갔을때 역시 수정된부분 적용완료
+4. 색깔부분 첨가
