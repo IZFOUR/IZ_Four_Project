@@ -18,17 +18,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:gravity="center">
 
-            <ImageView
-                android:id="@+id/imageView2"
+            <ImageButton
+                android:id="@+id/mbackbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/namecard" />
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:padding="10dp"
+                app:srcCompat="?attr/homeAsUpIndicator" />
 
-            <EditText
-                android:id="@+id/editTextText"
+            <TextView
+                android:id="@+id/mname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,30 +41,19 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
                 android:text="@string/welcome" />
 
-            <Button
-                android:id="@+id/mbtnpage"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/mbtn"
-                android:clipToOutline="true"
-                android:scaleType="centerInside"
-                android:text="My\nPage"
-                android:textColor="@color/White" />
+            <ImageButton
+                android:id="@+id/btnmenu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/menubtn"
+                android:background="@android:color/transparent"/>
 
-            <Button
-                android:id="@+id/mbtnablility"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/mbtn"
-                android:clipToOutline="true"
-                android:scaleType="centerInside"
-                android:text="My\nAbility"
-                android:textColor="@color/White"
-                android:textSize="12sp" />
+
         </LinearLayout>
 
 
@@ -93,6 +85,7 @@
                     android:background="@drawable/round"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
+                    android:layout_marginStart="10dp"
                     app:srcCompat="@drawable/character2" />
 
                 <ImageButton

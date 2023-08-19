@@ -23,7 +23,7 @@ class FriendEdit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
-        Log.d("Lifecycle", "onCreate")
+        Log.d("LifecycleFriendEdit", "onCreate")
 
 
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
@@ -136,27 +136,27 @@ class FriendEdit : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d("Lifecycle", "onStart")
+        Log.d("LifecycleFriendEdit", "onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("Lifecycle", "onResume")
+        Log.d("LifecycleFriendEdit", "onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Lifecycle", "onPause")
+        Log.d("LifecycleFriendEdit", "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Lifecycle", "onStop")
+        Log.d("LifecycleFriendEdit", "onStop")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Lifecycle", "onDestroy")
+        Log.d("LifecycleFriendEdit", "onDestroy")
     }
 }
 

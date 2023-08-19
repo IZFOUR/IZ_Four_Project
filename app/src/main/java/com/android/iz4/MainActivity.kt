@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -44,6 +45,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d("LifecycleMainActivity", "onCreate")
+
+        val mbtnback = findViewById<ImageButton>(R.id.mbackbtn)
+        mbtnback.setOnClickListener {
+            finish()
+        }
+
         val imgBtnList = mutableListOf<ImageButton>(
             findViewById(R.id.mimgbtn1),
             findViewById(R.id.mimgbtn2),
@@ -57,8 +65,9 @@ class MainActivity : AppCompatActivity() {
 
         addmemberbtn.setOnClickListener {
             val imgbtn = ImageButton(this)
-            val width = 90.dp()
-            val height = 90.dp()
+            val resources = getResources()
+            val width = resources.getDimensionPixelSize(R.dimen.width)
+            val height = resources.getDimensionPixelSize(R.dimen.height)
             imgbtn.layoutParams = LinearLayout.LayoutParams(width,height)
             imgbtn.scaleType = ImageView.ScaleType.CENTER_CROP
             imgbtn.clipToOutline = true
@@ -83,28 +92,45 @@ class MainActivity : AppCompatActivity() {
             edit_content3.setText(contentList[2])
         }
 
-        val btnpage = findViewById<Button>(R.id.mbtnpage)
-        val btnteam = findViewById<Button>(R.id.mbtnablility)
+        val btnmenu = findViewById<ImageButton>(R.id.btnmenu)
+        val profile_name =findViewById<TextView>(R.id.mname)
 
-        btnpage.setOnClickListener {
-            val id = intent.getStringExtra("dataFromSignInActivityId")
-            val name = intent.getStringExtra("dataFromSignInActivityName")
-            val age = intent.getStringExtra("dataFromSignInActivityAge")
-            val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
-            val intent = Intent(this, MyPage::class.java)
-            intent.putExtra("id", id)
-            intent.putExtra("name", name)
-            intent.putExtra("age", age)
-            intent.putExtra("mbti", mbti)
+        btnmenu.setOnClickListener { view ->
+            val Menu = PopupMenu(this, view)
+            Menu.menuInflater.inflate(R.menu.menu, Menu.menu)
 
-            startActivity(intent)
-            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+            Menu.setOnMenuItemClickListener { menuItem ->
+                when (menuItem.itemId) {
+                    R.id.menu_item_1 -> {
+                        val id = intent.getStringExtra("dataFromSignInActivityId")
+                        val name = intent.getStringExtra("dataFromSignInActivityName")
+                        val age = intent.getStringExtra("dataFromSignInActivityAge")
+                        val mbti = intent.getStringExtra("dataFromSignInActivityMbti")
+
+                        val intent = Intent(this, MyPage::class.java).apply {
+                            putExtra("id", id)
+                            putExtra("name", name)
+                            putExtra("age", age)
+                            putExtra("mbti", mbti)
+                        }
+
+                        profile_name.text = name
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+                        true
+                    }
+                    R.id.menu_item_2 -> {
+                        val intent = Intent(this, MyAbility::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
+                        true
+                    }
+                    else -> false
+                }
+            }
+            Menu.show()
         }
-        btnteam.setOnClickListener {
-            val intent = Intent(this, MyAbility::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
-        }
+
         friendresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
                 val data = it.data
@@ -121,8 +147,10 @@ class MainActivity : AppCompatActivity() {
                             val imgBtn = imgBtnList[index]
                             val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
                             val commu_img2 = findViewById<ImageView>(R.id.commu_img2)
+                            val commu_img3 = findViewById<ImageView>(R.id.commu_img3)
                             val commu_name1 = findViewById<EditText>(R.id.commu_name1)
                             val commu_name2 = findViewById<EditText>(R.id.commu_name2)
+                            val commu_name3 = findViewById<EditText>(R.id.commu_name3)
                             Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                 .into(imgBtn)
                             if (index == 0) {
@@ -134,6 +162,10 @@ class MainActivity : AppCompatActivity() {
                                 Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                     .into(commu_img2)
                                 commu_name2.setText(nameList[index])
+                            }else if (index == 2) {
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+                                    .into(commu_img3)
+                                commu_name3.setText(nameList[index])
                             }
                         }
 
@@ -167,12 +199,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun Int.dp(): Int {
-        return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            this.toFloat(),
-            Resources.getSystem().displayMetrics
-        ).toInt()
+    override fun onStart() {
+        super.onStart()
+        Log.d("LifecycleMainActivity", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("LifecycleMainActivity", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("LifecycleMainActivity", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("LifecycleMainActivity", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Lifecycle", "onDestroy")
     }
 }
 
