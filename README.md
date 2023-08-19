@@ -196,8 +196,11 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 
 [FEAT] : ⚙️ 8.20 am 03:14
 1. MyAbilityDetail 에서 작성하고 저장한 메모 MyAbility에 갔다가 돌아와도 유지 됨
-2. 1. MyAbilityDetail에서 메모를 저장하면 모든 프로젝트에 저장되어 공유하던 메모를
+2. MyAbilityDetail에서 메모를 저장하면 모든 프로젝트에 저장되어 공유하던 메모를
 3. 각각 프로젝트에 메모를 개별 저장하게 수정함
+
+[DESIGN] : 🎨 08.20 am 07:00
+1. 1차적으로 버튼손보고 모든 레이아웃 색상 조금씩 변경
 
 [FIX] : 🐛 08.20 am 08:09
 1.FriendEdit에서 이미지를 변경하지않고 저장했을때 MainActivity에서 error이미지가 출력되던부분 수정
