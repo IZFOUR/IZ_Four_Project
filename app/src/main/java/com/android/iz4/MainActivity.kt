@@ -44,6 +44,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d("LifecycleMainActivity", "onCreate")
+
+        val mbtnback = findViewById<ImageButton>(R.id.mbackbtn)
+        mbtnback.setOnClickListener {
+            finish()
+        }
+
         val imgBtnList = mutableListOf<ImageButton>(
             findViewById(R.id.mimgbtn1),
             findViewById(R.id.mimgbtn2),
@@ -57,8 +64,9 @@ class MainActivity : AppCompatActivity() {
 
         addmemberbtn.setOnClickListener {
             val imgbtn = ImageButton(this)
-            val width = 90.dp()
-            val height = 90.dp()
+            val resources = getResources()
+            val width = resources.getDimensionPixelSize(R.dimen.width)
+            val height = resources.getDimensionPixelSize(R.dimen.height)
             imgbtn.layoutParams = LinearLayout.LayoutParams(width,height)
             imgbtn.scaleType = ImageView.ScaleType.CENTER_CROP
             imgbtn.clipToOutline = true
@@ -85,6 +93,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnpage = findViewById<Button>(R.id.mbtnpage)
         val btnteam = findViewById<Button>(R.id.mbtnablility)
+        val profile_name =findViewById<TextView>(R.id.mname)
 
         btnpage.setOnClickListener {
             val id = intent.getStringExtra("dataFromSignInActivityId")
@@ -96,6 +105,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name", name)
             intent.putExtra("age", age)
             intent.putExtra("mbti", mbti)
+            profile_name.setText(name)
 
             startActivity(intent)
             overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
@@ -121,8 +131,10 @@ class MainActivity : AppCompatActivity() {
                             val imgBtn = imgBtnList[index]
                             val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
                             val commu_img2 = findViewById<ImageView>(R.id.commu_img2)
+                            val commu_img3 = findViewById<ImageView>(R.id.commu_img3)
                             val commu_name1 = findViewById<EditText>(R.id.commu_name1)
                             val commu_name2 = findViewById<EditText>(R.id.commu_name2)
+                            val commu_name3 = findViewById<EditText>(R.id.commu_name3)
                             Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                 .into(imgBtn)
                             if (index == 0) {
@@ -134,6 +146,10 @@ class MainActivity : AppCompatActivity() {
                                 Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                     .into(commu_img2)
                                 commu_name2.setText(nameList[index])
+                            }else if (index == 2) {
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+                                    .into(commu_img3)
+                                commu_name3.setText(nameList[index])
                             }
                         }
 
@@ -167,12 +183,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun Int.dp(): Int {
-        return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            this.toFloat(),
-            Resources.getSystem().displayMetrics
-        ).toInt()
+    override fun onStart() {
+        super.onStart()
+        Log.d("LifecycleMainActivity", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("LifecycleMainActivity", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("LifecycleMainActivity", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("LifecycleMainActivity", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Lifecycle", "onDestroy")
     }
 }
 
