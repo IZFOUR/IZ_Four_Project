@@ -43,7 +43,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:gravity="center"
-                android:text="@string/welcome" />
+                android:text="@string/welcome"
+                android:textStyle="bold"/>
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -55,7 +57,7 @@
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
                 android:layout_gravity="end"
-                app:srcCompat="@drawable/menubtn" />
+                app:srcCompat="@mipmap/hamburgerbtn" />
 
 
         </LinearLayout>
@@ -129,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginVertical="10dp"
-            android:backgroundTint="@color/Yellow100"
+            android:backgroundTint="@color/Pink50"
             android:clickable="true"
             app:srcCompat="@android:drawable/ic_input_add" />
 
@@ -174,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:inputType="text"
-                        android:text="@string/cbh" />
+                        android:text="@string/cbh"/>
                 </LinearLayout>
 
                 <ImageView
@@ -191,7 +193,7 @@
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
                     android:layout_marginHorizontal="10dp"
-                    android:text="@string/inputcontent" />
+                    android:text="@string/inputcontent"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -215,7 +217,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:inputType="text"
-                        android:text="@string/jjw" />
+                        android:text="@string/jjw"/>
                 </LinearLayout>
 
                 <ImageView
@@ -255,7 +257,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:inputType="text"
-                        android:text="@string/hjj" />
+                        android:text="@string/hjj"/>
                 </LinearLayout>
 
                 <ImageView

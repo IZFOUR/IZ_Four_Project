@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="진행상황"
-            android:textColor="@color/Black"
-            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="146dp"
             tools:layout_editor_absoluteY="16dp">
@@ -55,7 +55,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="4dp"
-            android:text="진행상황 추가"
+            android:text="업무 완료"
+            android:textColor="@drawable/btn_text"
+            android:background="@drawable/btn_shape"
             app:layout_constraintBottom_toBottomOf="@+id/DetailToolbar"
             app:layout_constraintEnd_toEndOf="@+id/DetailToolbar"
             app:layout_constraintTop_toTopOf="parent" />
@@ -141,6 +143,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="공유사항 메모"
+            android:textStyle="bold"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
             app:layout_constraintEnd_toEndOf="@+id/toolbar2"
             app:layout_constraintStart_toStartOf="@+id/toolbar2"
@@ -151,7 +155,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="4dp"
-            android:text="메모 저장"
+            android:text="메모"
+            android:textColor="@drawable/btn_text"
+            android:background="@drawable/btn_shape"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
             app:layout_constraintEnd_toEndOf="@+id/toolbar2"
             app:layout_constraintTop_toTopOf="@+id/toolbar2" />
@@ -173,57 +179,67 @@
               android:id="@+id/memoinput"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="메모를 남겨주세요" />
+              android:hint="메모를 남겨주세요"/>
 
           <TextView
               android:id="@+id/memoone"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memotwo"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memothree"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memofour"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memofive"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memosix"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memoseven"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memoeight"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memonine"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
           <TextView
               android:id="@+id/memoten"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
+              android:layout_height="wrap_content"
+              android:textSize="20sp"/>
 
         </LinearLayout>
       </ScrollView>
@@ -235,8 +251,10 @@
       android:id="@+id/toolbar"
       android:layout_width="match_parent"
       android:layout_height="60dp"
+      android:layout_marginTop="4dp"
       android:background="?attr/colorPrimary"
-      app:layout_constraintTop_toTopOf="parent">
+      app:layout_constraintTop_toTopOf="parent"
+      tools:layout_editor_absoluteX="0dp">
 
     <TextView
         android:id="@+id/abd_title"
@@ -244,7 +262,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="팀A 프로젝트"
-        android:textColor="@color/Black"
+        android:textColor="@color/Blue400"
+        android:textStyle="bold"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="16dp">
@@ -271,7 +290,9 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginEnd="12dp"
-      android:text="편집하기"
+      android:text="저장"
+      android:textColor="@color/Purple400"
+      android:background="@drawable/btn_shape"
       app:layout_constraintBottom_toBottomOf="@+id/toolbar"
       app:layout_constraintEnd_toEndOf="@+id/toolbar"
       app:layout_constraintTop_toTopOf="@+id/toolbar" />
