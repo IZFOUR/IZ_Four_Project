@@ -80,7 +80,8 @@ class MainActivity : AppCompatActivity() {
         val edit_content1 = findViewById<TextView>(R.id.mcontent1)
         val edit_content2 = findViewById<TextView>(R.id.mcontent2)
         val edit_content3 = findViewById<TextView>(R.id.mcontent3)
-
+        val profile_name =findViewById<TextView>(R.id.mname)
+        profile_name.text= intent.getStringExtra("dataFromSignInActivityName")
         if (contentList.size > 0) {
             edit_content1.setText(contentList[0])
         }
@@ -93,7 +94,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btnmenu = findViewById<ImageButton>(R.id.btnmenu)
-        val profile_name =findViewById<TextView>(R.id.mname)
 
         btnmenu.setOnClickListener { view ->
             val Menu = PopupMenu(this, view)
@@ -113,8 +113,6 @@ class MainActivity : AppCompatActivity() {
                             putExtra("age", age)
                             putExtra("mbti", mbti)
                         }
-
-                        profile_name.text = name
                         startActivity(intent)
                         overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                         true
