@@ -1,6 +1,7 @@
 package com.android.iz4
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,11 +19,14 @@ import com.squareup.picasso.Picasso
 //(ViewBinding, Fragment, RecyclerView, Adapter는 사용하지 말아주세요.)
 //7777I에엙 그럼 뭘 사용해야하지
 class MyAbility : AppCompatActivity() {
-    lateinit var Abilityresult: ActivityResultLauncher<Intent>
+    lateinit var abilityresult: ActivityResultLauncher<Intent>
 
-    private val titleList = mutableListOf("팀A프로젝트", "팀B프로젝트", "팀C프로젝트")
-    private var progressnumList = mutableListOf("","","")
-    private val progressnum2List = mutableListOf("","","")
+   companion object{
+       val titleList = mutableListOf("팀A프로젝트", "팀B프로젝트", "팀C프로젝트")
+       var progressnumList = mutableListOf("0","0","0")
+       val deadlinenumList = mutableListOf("0","0","0")
+       val MemoList = mutableListOf("","","","","","","","","","")
+   }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_myability)
@@ -51,23 +55,80 @@ class MyAbility : AppCompatActivity() {
                 intent.putExtra("index", index)
                 intent.putExtra("abtitle", titleList[index])
                 intent.putExtra("abprogressnum", progressnumList[index])
+                intent.putExtra("abdeadline", deadlinenumList [index])
+                intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList))
                 Log.d("LifecycleMyAbility",progressnumList[index])
-                Abilityresult.launch(intent)
+                abilityresult.launch(intent)
             }
         }
-        Abilityresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        abilityresult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == RESULT_OK) {
                 val data = it.data
                 if (data != null) {
                     val index = data.getIntExtra("index", -1)
                     if (index >= 0) {
                         progressnumList[index] = data.getStringExtra("abdprogressnum") ?: ""
+//                        deadlinenumList[index] = data.getStringExtra("abddeadlinenum") ?: ""
+                        MemoList[index] = data.getStringExtra("abdmemoList") ?: ""
                         progressnumList.add( progressnumList[index] ?: "")
-                        Log.d("LifecycleMyAbility",progressnumList[index])
+                        deadlinenumList.add( deadlinenumList[index] ?: "")
+                        Log.d("LifecycleMyAbility","넘어왔나? ${progressnumList[index]}")
+
+                        var ABarProcess = findViewById<ProgressBar>(R.id.ABarProcess)
+                        var ABarDeadline = findViewById<ProgressBar>(R.id.ABarDeadLine)
+                        var BBarProcess = findViewById<ProgressBar>(R.id.BBarProcess)
+                        var BBarDeadline = findViewById<ProgressBar>(R.id.BBarDeadLine)
+                        var CBarProcess = findViewById<ProgressBar>(R.id.CBarProcess)
+                        var CBarDeadline = findViewById<ProgressBar>(R.id.CBarDeadLine)
+                        var progressnum =  progressnumList[index].toInt()
+                        var progressnum2 = deadlinenumList[index].toInt()
+
+
+                        if (index == 0) {
+                            ABarProcess.progress = progressnum
+                            if(progressnum<progressnum2){
+                                ABarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }else if(progressnum==progressnum2) {
+                                ABarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                )
+                            }
+                            else{ABarDeadline.getProgressDrawable().setColorFilter(
+                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }
+                        } else if (index == 1) {
+                            BBarProcess.progress = progressnum
+                            if(progressnum<progressnum2){
+                                BBarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }else if(progressnum==progressnum2) {
+                                BBarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                )
+                            }
+                            else{BBarDeadline.getProgressDrawable().setColorFilter(
+                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }
+                        }else if (index == 2) {
+                            CBarProcess.progress = progressnum
+                            if(progressnum<progressnum2){
+                                CBarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }else if(progressnum==progressnum2) {
+                                CBarDeadline.getProgressDrawable().setColorFilter(
+                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                )
+                            }
+                            else{CBarDeadline.getProgressDrawable().setColorFilter(
+                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
+                            }
+                        }
                     }
                 }
             }
         }
+
     }
     override fun onStart() {
         super.onStart()

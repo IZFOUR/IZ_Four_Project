@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="팀A 프로젝트"
+                    android:text="@string/teamAproject"
                     android:textColor="@color/Black"
                     android:textSize="16dp"
                     tools:ignore="MissingConstraints"
@@ -120,6 +120,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/AProcess"
                     app:layout_constraintTop_toBottomOf="@+id/ADeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="77"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
@@ -218,6 +219,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/BProcess"
                     app:layout_constraintTop_toBottomOf="@+id/BDeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="80"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
@@ -315,6 +317,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/CProcess"
                     app:layout_constraintTop_toBottomOf="@+id/CDeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="37"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView

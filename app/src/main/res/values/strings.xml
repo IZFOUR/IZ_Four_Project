@@ -37,6 +37,8 @@
     <string name="MyTv_MyTtl">제목을 입력해주세요.</string>
     <string name="MyEt_MyStt">월/일: 간단한 설명을 적어주세요.</string>
     <string name="MyEt_MyDt">내용을 입력해주세요.</string>
+
+    <string name="teamAproject">팀A 프로젝트</string>
     <array name="bamin1">
         <item>@drawable/odung_smile</item>
         <item>@drawable/woman_phone</item>
