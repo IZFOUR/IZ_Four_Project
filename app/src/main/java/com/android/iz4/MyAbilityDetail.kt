@@ -1,8 +1,10 @@
 package com.android.iz4
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -11,6 +13,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MyAbilityDetail : AppCompatActivity() {
+    var progressnum:Int = 0
+    var progressnum2:Int =0
+    var texttest =""
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +23,8 @@ class MyAbilityDetail : AppCompatActivity() {
 
 
         var ProcessPlus = findViewById<Button>(R.id.DetailUpdate)
-        var ABarProcess = findViewById<ProgressBar>(R.id.ABarProcess)
-        var ABarDeadline = findViewById<ProgressBar>(R.id.ABarDeadLine)
+        var ABarProcess = findViewById<ProgressBar>(R.id.abd_ABarProcess)
+        var ABarDeadline = findViewById<ProgressBar>(R.id.abd_ABarDeadLine)
 
         var memosave = findViewById<Button>(R.id.memosave)
         var memoinput = findViewById<EditText>(R.id.memoinput)
@@ -34,22 +39,31 @@ class MyAbilityDetail : AppCompatActivity() {
         var memonine = findViewById<TextView>(R.id.memonine)
         var memoten = findViewById<TextView>(R.id.memoten)
 
+        val text_title = findViewById<TextView>(R.id.abd_title)
+
+        val index = intent.getIntExtra("index", -1)
+        val title = intent.getStringExtra("abtitle") ?: ""
+        val mbd_progress = intent.getStringExtra("abprogressnum") ?: ""
+
+        text_title.setText(title)
+
+
         ProcessPlus.setOnClickListener{
             ABarProcess.incrementProgressBy(20)
 
 
-            var texttest = ABarProcess.progress.toString()
+            texttest = ABarProcess.progress.toString()
             var texttest2 = ABarDeadline.progress.toString()
 
 
-            var progressnum = texttest.toInt()
-            var progressnum2 = texttest2.toInt()
+            progressnum = texttest.toInt()
+            progressnum2 = texttest2.toInt()
             if(progressnum<progressnum2){
                 ABarDeadline.getProgressDrawable().setColorFilter(
-                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
             }
             else{ABarDeadline.getProgressDrawable().setColorFilter(
-                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);}
+                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)}
 
         }
 
@@ -77,6 +91,17 @@ class MyAbilityDetail : AppCompatActivity() {
         var finish = findViewById<ImageButton>(R.id.BacktoMain)
         finish.setOnClickListener{
             finish()}
+
+        val saveButton = findViewById<Button>(R.id.abd_savebutton)
+        saveButton.setOnClickListener {
+
+            val intent = Intent(this, MyAbility::class.java)
+
+            intent.putExtra("abdprogressnum",  texttest)
+            Log.d("LifecycleMyAbility", texttest)
+            setResult(RESULT_OK,intent)
+            finish()
+        }
     }
 
 
