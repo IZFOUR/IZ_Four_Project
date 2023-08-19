@@ -140,8 +140,9 @@ class MainActivity : AppCompatActivity() {
                         mbtiList[index] = data.getStringExtra("inputMbti") ?: ""
                         statusList[index] = data.getStringExtra("inputStatus") ?: ""
                         imageUrlList[index] = data.getStringExtra("imageUrl") ?: ""
-                        Log.d("MainActivity imageUrlList", imageUrlList[index])
-                        if (imageUrlList[index].isNotEmpty()) {
+
+                        Log.d("MainActivity imageUrlList", "수정없이 저장버튼 눌렀을때 ${imageUrlList[index]}")
+                        if (imageUrlList[index].isNotEmpty() &&!imageUrlList[index].startsWith("character")) {
                             val imgBtn = imgBtnList[index]
                             val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
                             val commu_img2 = findViewById<ImageView>(R.id.commu_img2)
@@ -152,17 +153,14 @@ class MainActivity : AppCompatActivity() {
                             Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                 .into(imgBtn)
                             if (index == 0) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
-                                    .into(commu_img1)
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img1)
                                 Log.d("MainActivityname", nameList[0])
                                 commu_name1.setText(nameList[index])
                             } else if (index == 1) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
-                                    .into(commu_img2)
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img2)
                                 commu_name2.setText(nameList[index])
-                            }else if (index == 2) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
-                                    .into(commu_img3)
+                            } else if (index == 2) {
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img3)
                                 commu_name3.setText(nameList[index])
                             }
                         }
