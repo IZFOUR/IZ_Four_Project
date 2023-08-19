@@ -19,7 +19,8 @@ class MyAbilityDetail : AppCompatActivity() {
     var progressnum2: Int = 0
     var texttest = ""
     var texttest2 = ""
-
+    var MemoList = mutableListOf("","","","","","","","","","")
+    var memoList = arrayListOf("", "", "", "", "", "", "", "", "", "")
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,26 @@ class MyAbilityDetail : AppCompatActivity() {
 //        val mbd_deadline = intent.getStringExtra("abdeadline") ?:""
         ABarProcess.progress = mbd_progress.toInt()
 //        ABarDeadline.progress =mbd_progress.toInt()
+
+        val abmemoList = intent.getStringArrayListExtra("abmemoList")
+        if (abmemoList != null) {
+            MemoList.clear()
+            MemoList.addAll(abmemoList)
+
+            memoone.text = MemoList[0]
+            memotwo.text = MemoList[1]
+            memothree.text = MemoList[2]
+            memofour.text = MemoList[3]
+            memofive.text = MemoList[4]
+            memosix.text = MemoList[5]
+            memoseven.text = MemoList[6]
+            memoeight.text = MemoList[7]
+            memonine.text = MemoList[8]
+            memoten.text = MemoList[9]
+        }
+
+
+
 
 
         text_title.setText(title)
@@ -86,16 +107,6 @@ class MyAbilityDetail : AppCompatActivity() {
         var memoIndex = 0
         memosave.setOnClickListener {
             var input = memoinput.text.toString()
-//            var one = memoone.text.toString()
-//            var two = memotwo.text.toString()
-//            var three = memothree.text.toString()
-//            var four = memofour.text.toString()
-//            var five = memofive.text.toString()
-//            var six = memosix.text.toString()
-//            var seven = memoseven.text.toString()
-//            var eight = memoeight.text.toString()
-//            var nine = memonine.text.toString()
-//            var ten = memoten.text.toString()
 
             when (memoIndex) {
                 0 -> memoone.text = input
@@ -113,7 +124,22 @@ class MyAbilityDetail : AppCompatActivity() {
             if (memoIndex >= 10) {
                 memoIndex = 0
             }
+            memoList = arrayListOf(
+                memoone.text.toString(),
+                memotwo.text.toString(),
+                memothree.text.toString(),
+                memofour.text.toString(),
+                memofive.text.toString(),
+                memosix.text.toString(),
+                memoseven.text.toString(),
+                memoeight.text.toString(),
+                memonine.text.toString(),
+                memoten.text.toString()
+            )
+            Log.d("LifecycleMyAbility", "memoList 넘겨주는거맞아?${memoList[1]}")
         }
+
+
 
 
         var finish = findViewById<ImageButton>(R.id.BacktoMain)
@@ -128,7 +154,8 @@ class MyAbilityDetail : AppCompatActivity() {
             intent.putExtra("index", index)
             intent.putExtra("abdprogressnum", texttest)
             intent.putExtra("abddeadlinenum", texttest2)
-            Log.d("LifecycleMyAbility", texttest)
+            intent.putStringArrayListExtra("abdmemoList", ArrayList(memoList))
+
             setResult(RESULT_OK, intent)
             finish()
         }

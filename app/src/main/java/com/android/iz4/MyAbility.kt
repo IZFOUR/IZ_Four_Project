@@ -66,10 +66,14 @@ class MyAbility : AppCompatActivity() {
                     if (index >= 0) {
                         progressnumList[index] = data.getStringExtra("abdprogressnum") ?: ""
 //                        deadlinenumList[index] = data.getStringExtra("abddeadlinenum") ?: ""
-                        MemoList[index] = data.getStringExtra("abdmemoList") ?: ""
+                        val abdmemoList = data.getStringArrayListExtra("abdmemoList")
+                        if (abdmemoList != null) {
+                            MemoList.clear()
+                            MemoList.addAll(abdmemoList)
+                        }
+                        Log.d("LifecycleMyAbility","메모리스트 : ${MemoList[index]}")
                         progressnumList.add( progressnumList[index] ?: "")
                         deadlinenumList.add( deadlinenumList[index] ?: "")
-                        Log.d("LifecycleMyAbility","넘어왔나? ${progressnumList[index]}")
 
                         var ABarProcess = findViewById<ProgressBar>(R.id.ABarProcess)
                         var ABarDeadline = findViewById<ProgressBar>(R.id.ABarDeadLine)
