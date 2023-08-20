@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="MEMBER"
+            android:text="@string/MAIN_MMR"
             android:textStyle="bold" />
 
         <HorizontalScrollView
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="COMMUNICATION"
+            android:text="@string/MAIN_CMU"
             android:textStyle="bold" />
 
         <ScrollView
