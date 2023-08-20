@@ -227,4 +227,5 @@ MainActivity에서 FriendEdit으로 데이터이동
 1.MyPage의 프로필 사진 클릭 시 Url주소를 입력하면 사진 변경 가능
 2.MainActivity로 갔다가와도 편집된 사진 유지
 
-
+[FIX] : 🐛 08.21 am 03:46
+MainActivity에서 플로팅버튼으로 멤버를 무한히 추가했을때 뒤쪽 멤버이미지를 클릭하면 앱이종료되거나 랜덤 페이지로 이동되던 에러 해결 완료
