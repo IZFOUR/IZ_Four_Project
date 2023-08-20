@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pastel"
     tools:context=".MyAbility">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="?attr/colorPrimary"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
@@ -64,7 +65,7 @@
                 android:id="@+id/Atoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"
@@ -165,7 +166,7 @@
                 android:id="@+id/Btoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"
@@ -264,7 +265,7 @@
                 android:id="@+id/Ctoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"

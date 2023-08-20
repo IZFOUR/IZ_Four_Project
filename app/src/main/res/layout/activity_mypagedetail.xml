@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pastel"
     tools:context=".MyPageDetail">
 
     <ScrollView
@@ -21,7 +22,7 @@
                 android:id="@+id/toolbar4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/White"
+                android:background="@android:color/transparent"
                 android:elevation="10dp">
 
                 <ImageButton
