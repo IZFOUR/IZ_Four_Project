@@ -2,7 +2,6 @@ package com.android.iz4
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -91,7 +90,7 @@ class FriendEdit : AppCompatActivity() {
                 val content1 = it.findViewById<EditText>(R.id.feContentEditView)
                 Log.d("view", title1.text.toString())
             }
-            if (!nick.isEmpty() && !name.isEmpty() && !mbti.isEmpty() && !status.isEmpty()) {
+            if (nick.isNotEmpty() && name.isNotEmpty()&& mbti.isNotEmpty() && status.isNotEmpty()) {
 
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("index", index)
