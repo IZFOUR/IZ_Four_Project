@@ -205,3 +205,6 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 [FIX] : 🐛 08.20 am 08:09
 1.FriendEdit에서 이미지를 변경하지않고 저장했을때 MainActivity에서 error이미지가 출력되던부분 수정
 2.마찬가지로 다시 FriendEdit으로 돌아갔을때 error이미지가 출력되던부분 수정
+
+[DOCS] : 📚 08.20 am 09:30
+1.한/영 string 번역 작업(xml)
