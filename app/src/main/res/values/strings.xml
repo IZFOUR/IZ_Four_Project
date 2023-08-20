@@ -95,4 +95,5 @@
     <string name="TT_SN">Share notes</string>
     <string name="TT_PLN">Please leave a note.</string>
     <string name="TOEDIT_CLICK_IMAGE">\tTo edit\nClick on the image</string>
+    <string name="SA_PTTN">[a-zA-Z0-9._-]+@[a-z]+\.+[a-z]+</string>
 </resources>

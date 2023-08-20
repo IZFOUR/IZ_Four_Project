@@ -29,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
         val btn_calllognin1_1 = findViewById<Button>(R.id.sibtnlogin)
 
         fun isValidEmail(email: String): Boolean {
-            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+            val emailPattern = getString(R.string.SA_PTTN)
             return email.matches(emailPattern.toRegex())  //이메일 유효성 검사함수
         }
 
@@ -37,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
         edit_id.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (!isValidEmail(s.toString())) {
-                    edit_id.error = "올바른 이메일 주소를 입력하세요."
+                    edit_id.error = getString(R.string.EdIt_IdError)
                 }
             }
 
@@ -59,7 +59,7 @@ class SignInActivity : AppCompatActivity() {
         edit_psw.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (!isValidPassword(s.toString())) {
-                    edit_psw.error = "올바른 비밀번호를 입력하세요."
+                    edit_psw.error = getString(R.string.Pl_Pw)
                 }
             }
 
@@ -85,9 +85,9 @@ class SignInActivity : AppCompatActivity() {
                 intent1.putExtra("dataFromSignInActivityMbti", user.mbti)
 
                 startActivity(intent1)
-                Toast.makeText(this, "로그인 되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.You_Login, Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "아이디(이메일)/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.Pl_IdPw, Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -92,4 +92,5 @@
     <string name="TT_SN">공유사항 메모</string>
     <string name="TT_PLN">메모를 남겨주세요.</string>
     <string name="TOEDIT_CLICK_IMAGE">\t수정하려면 \n이미지를 클릭해주세요</string>
+    <string name="SA_PTTN">[a-zA-Z0-9._-]+@[a-z]+\.+[a-z]+</string>
 </resources>

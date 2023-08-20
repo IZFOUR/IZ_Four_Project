@@ -29,7 +29,7 @@ class MyPageDetail2 : AppCompatActivity() {
                 putExtra("MyPageDetail2AtivityDetail", detail2)
                 putExtra("MyPageDetail2AtivityStory", story2)
             }
-            Toast.makeText(this, "저장되었습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.MyDt_SAVED, Toast.LENGTH_SHORT).show()
             setResult(RESULT_OK, intent2)
             finish()
         }
