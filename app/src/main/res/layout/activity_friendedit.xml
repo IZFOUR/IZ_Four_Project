@@ -212,8 +212,9 @@
 
             <ImageView
                 android:id="@+id/feaddimgView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
                 android:layout_marginHorizontal="10dp" />
 
             <EditText
@@ -237,8 +238,9 @@
 
             <ImageView
                 android:id="@+id/feaddimgView1"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
                 android:layout_marginHorizontal="10dp"/>
 
             <EditText

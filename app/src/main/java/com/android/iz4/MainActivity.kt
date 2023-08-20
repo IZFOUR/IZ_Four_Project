@@ -31,14 +31,29 @@ class MainActivity : AppCompatActivity() {
             "삼성에 각 계열사에 계신 선배님들이 후배들을 위해 교육해주신답니다. 지원자 선착순으로 받습니다!!!",
             "", "", "", "", ""
         )
-        val titleList = mutableListOf("공원 나들이", "", "", "", "", "", "", "", "", "")
-        val contextList = mutableListOf("동락공원에 벚꽃구경 하러 나왔는데 벚꽃이 엄청 많이 피었습니다", "", "", "", "", "", "", "", "", "")
-        val titleList1 = mutableListOf("우리 고양이", "", "", "", "", "", "", "", "", "")
-        val contextList1 = mutableListOf("우리 고양이 딱지 입니다. 예쁘죠?", "", "", "", "", "", "", "", "", "")
+        val titleList =
+            mutableListOf("IN 아이즈원 콘서트", "우리 미미", "우리 딱지", "팬션 In 하와이", "", "", "", "", "", "")
+        val contextList = mutableListOf(
+            "오늘 아이즈원 콘서트 다녀왔어요!",
+            "우리 고양이 미미에요. 오늘 같이 몰디브 다녀왔어요!!",
+            "우리 고양이 딱지 입니다. 예쁘죠?",
+            "가리비,고기,소세지 꾸어 먹는중",
+            "", "", "", "", "", ""
+        )
+        val titleList1 =
+            mutableListOf("맥주 한잔", "마카롱 with 미미", "커피 한잔", "악귀 In 하와이", "", "", "", "", "", "")
+        val contextList1 = mutableListOf(
+            "저녁에 시원한 맥주한잔",
+            "몰디브에서 마카롱! 맛있네요",
+            "여유롭게 커피한잔 In 이탈리아 카페",
+            "누워서 악귀 다시보기 보는중",
+            "", "", "", "", "", ""
+        )
         val imageUrlList =
-            mutableListOf("character2", "character7", "character11", "character1", "")
-        val imageUrlList1 = mutableListOf("day", "character6", "", "", "")
-        val imageUrlList2 = mutableListOf("day2", "character6", "", "", "")
+            mutableListOf("character2", "character7", "character11", "character1", "", "", "")
+        val imageUrlList1 = mutableListOf("day3", "day4", "day2", "day5", "", "", "")
+        val imageUrlList2 = mutableListOf("day7", "day8", "day6", "day1", "", "", "")
+        var my_profile =""
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,8 +125,9 @@ class MainActivity : AppCompatActivity() {
                             putExtra("name", name)
                             putExtra("age", age)
                             putExtra("mbti", mbti)
+                            putExtra("fromprofile", my_profile)
                         }
-                        startActivity(intent)
+                        friendresult.launch(intent)
                         overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                         true
                     }
@@ -133,6 +149,7 @@ class MainActivity : AppCompatActivity() {
             if (it.resultCode == RESULT_OK) {
                 val data = it.data
                 if (data != null) {
+                    my_profile = data.getStringExtra("myprofile")?:""
                     val index = data.getIntExtra("index", -1)
                     if (index >= 0) {
                         nickList[index] = data.getStringExtra("inputNick") ?: ""
