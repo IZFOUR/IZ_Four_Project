@@ -17,7 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 class MyAbility : AppCompatActivity() {
     private lateinit var abilityresult: ActivityResultLauncher<Intent>
     private var progressnum = 0
-
     companion object{
         val titleList = mutableListOf(R.string.TAP, R.string.TBP, R.string.TCP)
         var progressnumList = mutableListOf("0","0","0")
@@ -52,6 +51,7 @@ class MyAbility : AppCompatActivity() {
                 intent.putExtra("abtitle", titleList[index])
                 intent.putExtra("abprogressnum", progressnumList[index])
                 intent.putExtra("abdeadline", deadlinenumList [index])
+                intent.putExtra("abtitle", titleList[index])
                 when (index) {
                     0 -> intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList1))
                     1 -> intent.putStringArrayListExtra("abmemoList", ArrayList(MemoList2))
@@ -68,7 +68,7 @@ class MyAbility : AppCompatActivity() {
                     val index = data.getIntExtra("index", -1)
                     if (index >= 0) {
                         progressnumList[index] = data.getStringExtra("abdprogressnum") ?: ""
-//                        deadlinenumList[index] = data.getStringExtra("abddeadlinenum") ?: ""
+                        deadlinenumList[index] = data.getStringExtra("abddeadlinenum") ?: ""
                         val abdmemoList = data.getStringArrayListExtra("abdmemoList")
                         if (abdmemoList != null) {
                             when (index) {
@@ -96,8 +96,6 @@ class MyAbility : AppCompatActivity() {
                         val CBarDeadline = findViewById<ProgressBar>(R.id.CBarDeadLine)
                         try {
                             progressnum = progressnumList[index].toInt()
-
-
                             val progressnum2 = deadlinenumList[index].toInt()
 
 

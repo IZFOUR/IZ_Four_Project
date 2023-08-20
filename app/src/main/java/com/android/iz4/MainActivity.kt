@@ -1,25 +1,19 @@
 package com.android.iz4
 
 import android.content.Intent
-import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Nickname
 import android.util.Log
-import android.util.TypedValue
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
     lateinit var friendresult: ActivityResultLauncher<Intent>
@@ -31,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수","","","","","")
         val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ", "","","","","","")
         val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!","","","","","")
-        val titleList = mutableListOf("", "", "", "", "","","","","","")
         val contentList = mutableListOf(
             "연봉 10억 신입 모집합니다 공채하기 전에 빨리 연락 주세요!!!",
             "가 족같은 회사 신입 모집 평생 직장입니다 많은 지원 부탁드려요!!!",
