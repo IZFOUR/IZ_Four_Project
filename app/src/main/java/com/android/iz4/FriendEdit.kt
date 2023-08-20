@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -24,8 +23,6 @@ class FriendEdit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_friendedit)
-        Log.d("LifecycleFriendEdit", "onCreate")
-
 
         val febtnback = findViewById<ImageButton>(R.id.febackbtn)
         febtnback.setOnClickListener {
@@ -52,7 +49,7 @@ class FriendEdit : AppCompatActivity() {
         val title1 = intent.getStringExtra("fetitle1") ?:""
         val context = intent.getStringExtra("fecontext") ?:""
         val context1 = intent.getStringExtra("fecontext1")?:""
-        Log.d("AAAAAAAA",fenick)
+
         imageUrl = intent.getStringExtra("imgBtn") ?: ""
         imageUrl1 = intent.getStringExtra("feimageUrlList1") ?:""
         imageUrl2 = intent.getStringExtra("feimageUrlList2")?:""
@@ -77,13 +74,30 @@ class FriendEdit : AppCompatActivity() {
                 Picasso.get().load(imageUrl).error(R.drawable.question).into(editimgView)
             }
         }
-        editimgView1.setImageResource(R.drawable.question)
-        editimgView2.setImageResource(R.drawable.question)
-        var resourceId1 = resources.getIdentifier(imageUrl1,"drawable", packageName)
-        var resourceId2 = resources.getIdentifier(imageUrl2,"drawable", packageName)
-        Picasso.get().load(resourceId1).error(R.drawable.question).into(editimgView1)
-        Picasso.get().load(resourceId2).error(R.drawable.question).into(editimgView2)
 
+        if (imageUrl1.isNullOrEmpty()) {
+            editimgView1.setImageResource(R.drawable.question)
+        } else {
+            val resourceId1 = resources.getIdentifier(imageUrl1, "drawable", packageName)
+
+            if (resourceId1 != 0) {
+                Picasso.get().load(resourceId1).error(R.drawable.question).into(editimgView1)
+            } else {
+                Picasso.get().load(imageUrl1).error(R.drawable.question).into(editimgView1)
+            }
+        }
+
+        if (imageUrl2.isNullOrEmpty()) {
+            editimgView2.setImageResource(R.drawable.question)
+        } else {
+            val resourceId2 = resources.getIdentifier(imageUrl1,"drawable", packageName)
+
+            if (resourceId2 != 0) {
+                Picasso.get().load(resourceId2).error(R.drawable.question).into(editimgView2)
+            } else {
+                Picasso.get().load(resourceId2).error(R.drawable.question).into(editimgView2)
+            }
+        }
 
         addimg = findViewById(R.id.feaddimg)
         val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
@@ -106,12 +120,6 @@ class FriendEdit : AppCompatActivity() {
             val context = editcontext.text.toString()
             val context1 = editcontext1.text.toString()
 
-            viewList.forEach {
-                val title1 = it.findViewById<EditText>(R.id.feTitle)
-                val imgView1 = it.findViewById<ImageView>(R.id.feaddimgView)
-                val content1 = it.findViewById<EditText>(R.id.feContext)
-                Log.d("view", title1.text.toString())
-            }
             if (nick.isNotEmpty() && name.isNotEmpty()&& mbti.isNotEmpty() && status.isNotEmpty()) {
 
                 val intent = Intent(this, MainActivity::class.java)
@@ -125,25 +133,20 @@ class FriendEdit : AppCompatActivity() {
                 intent.putExtra("inputContext", context)
                 intent.putExtra("inputContext1", context1)
 
-
                 if (imageUrl != null && imageUrl!!.isNotEmpty()) {
                     intent.putExtra("imageUrl", imageUrl)
                 }
-
-
-
                 setResult(RESULT_OK, intent)
                 finish()
             } else {
                 Toast.makeText(this, getString(R.string.No_Info), Toast.LENGTH_SHORT).show()
             }
         }
-        val imgclick = findViewById<ImageView>(R.id.feprofile)
-        imgclick.setOnClickListener {
-            dialog(imgclick)
+
+        editimgView.setOnClickListener {
+            dialog( editimgView)
         }
     }
-
     private fun dialog(imgView: ImageView) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.PL_URL)
@@ -161,31 +164,6 @@ class FriendEdit : AppCompatActivity() {
         }
         val dialog = builder.create()
         dialog.show()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("LifecycleFriendEdit", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("LifecycleFriendEdit", "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("LifecycleFriendEdit", "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("LifecycleFriendEdit", "onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("LifecycleFriendEdit", "onDestroy")
     }
 }
 
