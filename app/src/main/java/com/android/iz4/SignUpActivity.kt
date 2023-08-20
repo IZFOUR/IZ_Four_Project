@@ -33,7 +33,7 @@ class SignUpActivity : AppCompatActivity() {
         edit_id2.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (!isValidEmail(s.toString())) {
-                    edit_id2.error = "올바른 이메일 주소를 입력하세요."
+                    edit_id2.error = getString(R.string.EdIt_IdError)
                 }
             }
 
@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
         edit_psw2.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (!isValidPassword(s.toString())) {
-                    edit_psw2.error = "올바른 비밀번호를 입력하세요.(숫자,영문 최소1개 이상/총 8자이상)."
+                    edit_psw2.error = getString(R.string.EdIt_PwError)
                 }
             }
 
@@ -69,12 +69,12 @@ class SignUpActivity : AppCompatActivity() {
             val idcheck = idCheck(id2)
             if (!id2.isEmpty()) {
                 if (idcheck) {
-                    Toast.makeText(this, "중복된 아이디(이메일)가 존재 합니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.Dlc_Email, Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "사용 가능한 아이디(이메일) 입니다.(다만, 이메일형식이 아닐시 가입이 불가합니다.)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.Available_Email, Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "아이디(이메일)를 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.Pl_Id, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -87,11 +87,11 @@ class SignUpActivity : AppCompatActivity() {
 
             if (name2.isNotBlank() && id2.isNotBlank() && psw2.isNotBlank() && age2.isNotBlank() && mbti2.isNotBlank()) {
                 if (idCheck(id2)) {
-                    Toast.makeText(this, "아이디(이메일)가 중복됩니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.Dlc_Email, Toast.LENGTH_SHORT).show()
                 } else if (!isValidEmail(id2)) { // 이메일 유효성 검사 추가
-                    Toast.makeText(this, "올바른 이메일 주소를 입력하세요.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.EdIt_IdError, Toast.LENGTH_SHORT).show()
                 } else if (!isValidPassword(psw2)) { // 비밀번호 유효성 검사 추가
-                    Toast.makeText(this, "올바른 비밀번호를 입력하세요.(숫자,영문 최소1개 이상/총 8자이상)", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.EdIt_PwError, Toast.LENGTH_SHORT).show()
                 } else {
                     val intent2_1 = Intent().apply {
                         putExtra("dataFromSignUpActivityName", name2)
@@ -104,7 +104,7 @@ class SignUpActivity : AppCompatActivity() {
                     finish()
                 }
             } else {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.No_Info, Toast.LENGTH_SHORT).show()
             }
         }
     }

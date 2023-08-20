@@ -34,8 +34,8 @@ class MyPage : AppCompatActivity() {
         ) {
 
             id.text = "ID: " + intent.getStringExtra("id")
-            name.text = "이름: " + intent.getStringExtra("name")
-            age.text = "나이: " + intent.getStringExtra("age")
+            name.text = "NAME: " + intent.getStringExtra("name")
+            age.text = "AGE: " + intent.getStringExtra("age")
             mbti.text = "MBTI: " + intent.getStringExtra("mbti")
 
 
