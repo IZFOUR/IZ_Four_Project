@@ -159,7 +159,6 @@ class MainActivity : AppCompatActivity() {
                         contextList[index] = data.getStringExtra("inputContext") ?: ""
                         contextList1[index] = data.getStringExtra("inputContext1") ?: ""
 
-                        Log.d("MainActivity imageUrlList", "수정없이 저장버튼 눌렀을때 ${imageUrlList[index]}")
                         if (imageUrlList[index].isNotEmpty() && !imageUrlList[index].startsWith("character")) {
                             val imgBtn = imgBtnList[index]
                             val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
@@ -171,10 +170,6 @@ class MainActivity : AppCompatActivity() {
                             Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                 .into(imgBtn)
 
-//                            Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
-//                                .into(imgBtn)
-//                            Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
-//                                .into()
                             if (index == 0) {
                                 Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                     .into(commu_img1)

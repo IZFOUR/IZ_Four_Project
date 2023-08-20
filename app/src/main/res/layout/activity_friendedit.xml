@@ -191,16 +191,6 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/febtntitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:layout_marginVertical="10dp"
-                android:backgroundTint="@color/Pink50"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_input_add" />
-
             <EditText
                 android:id="@+id/feTitle"
                 android:layout_width="match_parent"

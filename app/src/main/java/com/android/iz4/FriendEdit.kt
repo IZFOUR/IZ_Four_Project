@@ -90,23 +90,13 @@ class FriendEdit : AppCompatActivity() {
         if (imageUrl2.isNullOrEmpty()) {
             editimgView2.setImageResource(R.drawable.question)
         } else {
-            val resourceId2 = resources.getIdentifier(imageUrl1,"drawable", packageName)
+            val resourceId2 = resources.getIdentifier(imageUrl2,"drawable", packageName)
 
             if (resourceId2 != 0) {
                 Picasso.get().load(resourceId2).error(R.drawable.question).into(editimgView2)
             } else {
                 Picasso.get().load(resourceId2).error(R.drawable.question).into(editimgView2)
             }
-        }
-
-        addimg = findViewById(R.id.feaddimg)
-        val addButton = findViewById<FloatingActionButton>(R.id.febtntitle)
-        val viewList = arrayListOf<View>()
-        addButton.setOnClickListener {
-            val inflater = LayoutInflater.from(this)
-            val item = inflater.inflate(R.layout.additem, addimg, false)
-            addimg.addView(item)
-            viewList.add(item)
         }
 
         val btnedit = findViewById<Button>(R.id.febtnedit)

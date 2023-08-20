@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MyAbilityDetail : AppCompatActivity() {
-    var progressnum: Int = 0
+    companion object{var progressnum: Int = 0}
     var progressnum2: Int = 77
     var texttest = ""
     var texttest2 = ""
@@ -47,9 +47,7 @@ class MyAbilityDetail : AppCompatActivity() {
         val index = intent.getIntExtra("index", -1)
         val title = intent.getStringExtra("abtitle") ?: ""
         val mbd_progress = intent.getStringExtra("abprogressnum") ?: ""
-//        val mbd_deadline = intent.getStringExtra("abdeadline") ?:""
-//        ABarDeadline.progress =mbd_progress.toInt()
-
+        val mbd_deadline = intent.getStringExtra("abdeadline") ?:""
         text_title.text = title
 
         try {
@@ -68,11 +66,9 @@ class MyAbilityDetail : AppCompatActivity() {
                 )
             }
         } catch (e: Exception) {
-            ABarProcess.progress = 0
+            ABarProcess.progress =  progressnum
 
         }
-
-
 
         val abmemoList = intent.getStringArrayListExtra("abmemoList")
         if (abmemoList != null) {
@@ -94,10 +90,8 @@ class MyAbilityDetail : AppCompatActivity() {
         ProcessPlus.setOnClickListener {
             ABarProcess.incrementProgressBy(20)
 
-
             texttest = ABarProcess.progress.toString()
             texttest2 = ABarDeadline.progress.toString()
-
 
             progressnum = texttest.toInt()
             progressnum2 = texttest2.toInt()
@@ -149,7 +143,7 @@ class MyAbilityDetail : AppCompatActivity() {
                 memonine.text.toString(),
                 memoten.text.toString()
             )
-            Log.d("LifecycleMyAbility", "memoList 넘겨주는거맞아?${memoList[1]}")
+            memoinput.text.clear()
         }
 
 

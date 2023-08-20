@@ -17,16 +17,10 @@
             android:name=".FriendEdit"
             android:exported="false" />
         <activity
-            android:name=".MyPageDetail"
-            android:exported="false" />
-        <activity
             android:name=".MyAbilityDetail"
             android:exported="false" />
         <activity
             android:name=".MyAbility"
-            android:exported="false" />
-        <activity
-            android:name=".Friend"
             android:exported="false" />
         <activity
             android:name=".MyPage"
