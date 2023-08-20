@@ -21,20 +21,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addmemberbtn: FloatingActionButton
 
     companion object {
-        val nickList = mutableListOf("팀원", "팀원", "팀원", "팀장","","","","","")
-        val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수","","","","","")
-        val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ", "","","","","","")
-        val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!","","","","","")
+        val nickList = mutableListOf("팀원", "팀원", "팀원", "팀장", "", "", "", "", "")
+        val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수", "", "", "", "", "")
+        val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ", "", "", "", "", "", "")
+        val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!", "", "", "", "", "")
         val contentList = mutableListOf(
             "연봉 10억 신입 모집합니다 공채하기 전에 빨리 연락 주세요!!!",
             "가 족같은 회사 신입 모집 평생 직장입니다 많은 지원 부탁드려요!!!",
             "삼성에 각 계열사에 계신 선배님들이 후배들을 위해 교육해주신답니다. 지원자 선착순으로 받습니다!!!",
-            "","","","",""
+            "", "", "", "", ""
         )
+        val titleList = mutableListOf("공원 나들이", "", "", "", "", "", "", "", "", "")
+        val contextList = mutableListOf("동락공원에 벚꽃구경 하러 나왔는데 벚꽃이 엄청 많이 피었습니다", "", "", "", "", "", "", "", "", "")
+        val titleList1 = mutableListOf("우리 고양이", "", "", "", "", "", "", "", "", "")
+        val contextList1 = mutableListOf("우리 고양이 딱지 입니다. 예쁘죠?", "", "", "", "", "", "", "", "", "")
         val imageUrlList =
             mutableListOf("character2", "character7", "character11", "character1", "")
+        val imageUrlList1 = mutableListOf("day", "character6", "", "", "")
+        val imageUrlList2 = mutableListOf("day2", "character6", "", "", "")
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -61,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             val resources = getResources()
             val width = resources.getDimensionPixelSize(R.dimen.width)
             val height = resources.getDimensionPixelSize(R.dimen.height)
-            imgbtn.layoutParams = LinearLayout.LayoutParams(width,height)
+            imgbtn.layoutParams = LinearLayout.LayoutParams(width, height)
             imgbtn.scaleType = ImageView.ScaleType.CENTER_CROP
             imgbtn.clipToOutline = true
             imgbtn.setBackgroundResource(R.drawable.round)
@@ -73,8 +78,8 @@ class MainActivity : AppCompatActivity() {
         val edit_content1 = findViewById<TextView>(R.id.mcontent1)
         val edit_content2 = findViewById<TextView>(R.id.mcontent2)
         val edit_content3 = findViewById<TextView>(R.id.mcontent3)
-        val profile_name =findViewById<TextView>(R.id.mname)
-        profile_name.text= intent.getStringExtra("dataFromSignInActivityName")
+        val profile_name = findViewById<TextView>(R.id.mname)
+        profile_name.text = intent.getStringExtra("dataFromSignInActivityName")
         if (contentList.size > 0) {
             edit_content1.setText(contentList[0])
         }
@@ -82,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         if (contentList.size > 1) {
             edit_content2.setText(contentList[1])
         }
-        if(contentList.size>2){
+        if (contentList.size > 2) {
             edit_content3.setText(contentList[2])
         }
 
@@ -110,12 +115,14 @@ class MainActivity : AppCompatActivity() {
                         overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                         true
                     }
+
                     R.id.menu_item_2 -> {
                         val intent = Intent(this, MyAbility::class.java)
                         startActivity(intent)
                         overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                         true
                     }
+
                     else -> false
                 }
             }
@@ -133,27 +140,39 @@ class MainActivity : AppCompatActivity() {
                         mbtiList[index] = data.getStringExtra("inputMbti") ?: ""
                         statusList[index] = data.getStringExtra("inputStatus") ?: ""
                         imageUrlList[index] = data.getStringExtra("imageUrl") ?: ""
+                        titleList[index] = data.getStringExtra("inputTitle") ?: ""
+                        titleList1[index] = data.getStringExtra("inputTitle1") ?: ""
+                        contextList[index] = data.getStringExtra("inputContext") ?: ""
+                        contextList1[index] = data.getStringExtra("inputContext1") ?: ""
 
                         Log.d("MainActivity imageUrlList", "수정없이 저장버튼 눌렀을때 ${imageUrlList[index]}")
-                        if (imageUrlList[index].isNotEmpty() &&!imageUrlList[index].startsWith("character")) {
+                        if (imageUrlList[index].isNotEmpty() && !imageUrlList[index].startsWith("character")) {
                             val imgBtn = imgBtnList[index]
                             val commu_img1 = findViewById<ImageView>(R.id.commu_img1)
                             val commu_img2 = findViewById<ImageView>(R.id.commu_img2)
                             val commu_img3 = findViewById<ImageView>(R.id.commu_img3)
-                            val commu_name1 = findViewById<EditText>(R.id.commu_name1)
-                            val commu_name2 = findViewById<EditText>(R.id.commu_name2)
-                            val commu_name3 = findViewById<EditText>(R.id.commu_name3)
+                            val commu_name1 = findViewById<TextView>(R.id.commu_name1)
+                            val commu_name2 = findViewById<TextView>(R.id.commu_name2)
+                            val commu_name3 = findViewById<TextView>(R.id.commu_name3)
                             Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
                                 .into(imgBtn)
+
+//                            Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+//                                .into(imgBtn)
+//                            Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+//                                .into()
                             if (index == 0) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img1)
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+                                    .into(commu_img1)
                                 Log.d("MainActivityname", nameList[0])
                                 commu_name1.setText(nameList[index])
                             } else if (index == 1) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img2)
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+                                    .into(commu_img2)
                                 commu_name2.setText(nameList[index])
                             } else if (index == 2) {
-                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question).into(commu_img3)
+                                Picasso.get().load(imageUrlList[index]).error(R.drawable.question)
+                                    .into(commu_img3)
                                 commu_name3.setText(nameList[index])
                             }
                         }
@@ -181,6 +200,13 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("fembti", mbtiList[index])
                     intent.putExtra("festatus", statusList[index])
                     intent.putExtra("imgBtn", imageUrlList[index])
+                    intent.putExtra("fetitle", contentList[index])
+                    intent.putExtra("fetitle", titleList[index])
+                    intent.putExtra("fetitle1", titleList1[index])
+                    intent.putExtra("fecontext", contextList[index])
+                    intent.putExtra("fecontext1", contextList1[index])
+                    intent.putExtra("feimageUrlList1",imageUrlList1[index])
+                    intent.putExtra("feimageUrlList2", imageUrlList2[index])
                     Log.d("fromMainActivity imageUrlList", nickList[index])
                     friendresult.launch(intent)
                     overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
@@ -188,6 +214,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     override fun onStart() {
         super.onStart()
         Log.d("LifecycleMainActivity", "onStart")
