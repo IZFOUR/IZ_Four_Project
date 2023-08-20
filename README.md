@@ -1,6 +1,6 @@
 <공지사항>
 dev : 가장 최근 파일입니다.
-8.19 pm 6:51 ★★진주님 SignInActivity 수정했습니다 object UserListData를 SignInActivity내부로 옴겼어요★★
+8.19 pm 6:51 ★★진주님 SignInActivity 수정했습니다 object UserListData를 SignInActivity내부로 옴겼어요★★ // 확인했습니다 
 
 
 [PACK] : 🎁 08.14(16:15)
