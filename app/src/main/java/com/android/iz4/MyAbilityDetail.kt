@@ -50,7 +50,11 @@ class MyAbilityDetail : AppCompatActivity() {
         val title = intent.getStringExtra("abtitle") ?: ""
         val mbd_progress = intent.getStringExtra("abprogressnum") ?: ""
 //        val mbd_deadline = intent.getStringExtra("abdeadline") ?:""
-        ABarProcess.progress = mbd_progress.toInt()
+        try {
+            ABarProcess.progress = mbd_progress.toInt()
+        } catch (e: NumberFormatException) {
+            ABarProcess.progress = 0
+        }
 //        ABarDeadline.progress =mbd_progress.toInt()
 
         val abmemoList = intent.getStringArrayListExtra("abmemoList")
@@ -155,6 +159,9 @@ class MyAbilityDetail : AppCompatActivity() {
             intent.putExtra("abdprogressnum", texttest)
             intent.putExtra("abddeadlinenum", texttest2)
             intent.putStringArrayListExtra("abdmemoList", ArrayList(memoList))
+
+            intent.putExtra("abprogressnum", "0")
+            intent.putExtra("abdeadlinenum", "0")
 
             setResult(RESULT_OK, intent)
             finish()

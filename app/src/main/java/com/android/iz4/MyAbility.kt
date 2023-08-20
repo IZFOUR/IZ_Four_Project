@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ProgressBar
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 
@@ -16,10 +15,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 //(ViewBinding, Fragment, RecyclerView, Adapter는 사용하지 말아주세요.)
 //7777I에엙 그럼 뭘 사용해야하지
 class MyAbility : AppCompatActivity() {
-    lateinit var abilityresult: ActivityResultLauncher<Intent>
+    private lateinit var abilityresult: ActivityResultLauncher<Intent>
+    private var progressnum = 0
 
     companion object{
-        val titleList = mutableListOf("팀A프로젝트", "팀B프로젝트", "팀C프로젝트")
+        val titleList = mutableListOf(R.string.TAP, R.string.TBP, R.string.TCP)
         var progressnumList = mutableListOf("0","0","0")
         val deadlinenumList = mutableListOf("0","0","0")
         val MemoList1 = mutableListOf("", "", "", "", "", "", "", "", "", "")
@@ -39,12 +39,9 @@ class MyAbility : AppCompatActivity() {
 
 
         //툴바에서 뒤로가기버튼 구현
-        var finish = findViewById<ImageButton>(R.id.BackButton)
+        val finish = findViewById<ImageButton>(R.id.BackButton)
         finish.setOnClickListener{
             finish()}
-
-        //프로그레스 바 받아오기
-        var ABar = findViewById<ProgressBar>(R.id.ABarProcess)
 
         //디테일 페이지로 넘겨주기
 
@@ -91,56 +88,68 @@ class MyAbility : AppCompatActivity() {
                         progressnumList.add( progressnumList[index] ?: "")
                         deadlinenumList.add( deadlinenumList[index] ?: "")
 
-                        var ABarProcess = findViewById<ProgressBar>(R.id.ABarProcess)
-                        var ABarDeadline = findViewById<ProgressBar>(R.id.ABarDeadLine)
-                        var BBarProcess = findViewById<ProgressBar>(R.id.BBarProcess)
-                        var BBarDeadline = findViewById<ProgressBar>(R.id.BBarDeadLine)
-                        var CBarProcess = findViewById<ProgressBar>(R.id.CBarProcess)
-                        var CBarDeadline = findViewById<ProgressBar>(R.id.CBarDeadLine)
-                        var progressnum =  progressnumList[index].toInt()
-                        var progressnum2 = deadlinenumList[index].toInt()
+                        val ABarProcess = findViewById<ProgressBar>(R.id.ABarProcess)
+                        val ABarDeadline = findViewById<ProgressBar>(R.id.ABarDeadLine)
+                        val BBarProcess = findViewById<ProgressBar>(R.id.BBarProcess)
+                        val BBarDeadline = findViewById<ProgressBar>(R.id.BBarDeadLine)
+                        val CBarProcess = findViewById<ProgressBar>(R.id.CBarProcess)
+                        val CBarDeadline = findViewById<ProgressBar>(R.id.CBarDeadLine)
+                        try {
+                            progressnum = progressnumList[index].toInt()
 
 
-                        if (index == 0) {
-                            ABarProcess.progress = progressnum
-                            if(progressnum<progressnum2){
-                                ABarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }else if(progressnum==progressnum2) {
-                                ABarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
-                                )
+                            val progressnum2 = deadlinenumList[index].toInt()
+
+
+                            if (index == 0) {
+                                ABarProcess.progress = progressnum
+                                if (progressnum < progressnum2) {
+                                    ABarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.RED, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else if (progressnum == progressnum2) {
+                                    ABarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else {
+                                    ABarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                }
+                            } else if (index == 1) {
+                                BBarProcess.progress = progressnum
+                                if (progressnum < progressnum2) {
+                                    BBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.RED, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else if (progressnum == progressnum2) {
+                                    BBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else {
+                                    BBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                }
+                            } else if (index == 2) {
+                                CBarProcess.progress = progressnum
+                                if (progressnum < progressnum2) {
+                                    CBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.RED, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else if (progressnum == progressnum2) {
+                                    CBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                } else {
+                                    CBarDeadline.getProgressDrawable().setColorFilter(
+                                        Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN
+                                    )
+                                }
                             }
-                            else{ABarDeadline.getProgressDrawable().setColorFilter(
-                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }
-                        } else if (index == 1) {
-                            BBarProcess.progress = progressnum
-                            if(progressnum<progressnum2){
-                                BBarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }else if(progressnum==progressnum2) {
-                                BBarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
-                                )
-                            }
-                            else{BBarDeadline.getProgressDrawable().setColorFilter(
-                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }
-                        }else if (index == 2) {
-                            CBarProcess.progress = progressnum
-                            if(progressnum<progressnum2){
-                                CBarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }else if(progressnum==progressnum2) {
-                                CBarDeadline.getProgressDrawable().setColorFilter(
-                                    Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN
-                                )
-                            }
-                            else{CBarDeadline.getProgressDrawable().setColorFilter(
-                                Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }
-                        }
+                        }  catch (e: Exception) {
+                        progressnum = 0
+                    }
                     }
                 }
             }
