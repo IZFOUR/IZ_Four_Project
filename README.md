@@ -212,4 +212,10 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 [FIX] : 🐛[DOCS] : 📚  08.20 am10:21
 1. ProcessPlus버튼을 누르지않고 memosave버튼을 누를때 랜덤 Activity로 이동되거나 앱이 종료되버리는 오류 해결
 2. try catch문을 이용한 예외처리 한곳만 했을때는 3~4번 클릭후 다시 재발해서 MyAbility,MyAbility 두곳다 예외처리해줌
-3. 자잘한 MyAbility 번역 
+3. 자잘한 MyAbility 번역
+
+[FIX] : 🐛 08.20 am 11:39
+1. MyAbility에서 MyAbilityDetail 로 들어갈떄마다 마감 바의 색깔이 자꾸 초기화되는 오류 수정
+
+자러감 혹시나 15시까지안오면 010 2392 2482 좀 꺠워주세요
+일단 이제 기능구현말고 이미지랑 각 프로필 일기좀 부탁드릴꼐요(friend edit 페이지에 4명 좀 부탁드릴꼐요), 번역 아직 좀 남았습니다 리드미 참조, 디자인도 좀..시간되시면 부탁해요
