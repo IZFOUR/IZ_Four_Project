@@ -21,38 +21,35 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addmemberbtn: FloatingActionButton
 
     companion object {
-        val nickList = mutableListOf("팀원", "팀원", "팀원", "팀장", "", "", "", "", "")
-        val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수", "", "", "", "", "")
-        val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ", "", "", "", "", "", "")
-        val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!", "", "", "", "", "")
+        val nickList = mutableListOf("팀원", "팀원", "팀원", "팀장")
+        val nameList = mutableListOf("조병현", "장재원", "황진주", "박성수")
+        val mbtiList = mutableListOf("INFP", "INFP", "ENFP", "ESFJ")
+        val statusList = mutableListOf("왈랄랄루", "화이팅!", "안녕하세요!", "잘 부탁드려요!")
         val contentList = mutableListOf(
             "연봉 10억 신입 모집합니다 공채하기 전에 빨리 연락 주세요!!!",
             "가 족같은 회사 신입 모집 평생 직장입니다 많은 지원 부탁드려요!!!",
-            "삼성에 각 계열사에 계신 선배님들이 후배들을 위해 교육해주신답니다. 지원자 선착순으로 받습니다!!!",
-            "", "", "", "", ""
+            "삼성에 각 계열사에 계신 선배님들이 후배들을 위해 교육해주신답니다. 지원자 선착순으로 받습니다!!!"
         )
         val titleList =
-            mutableListOf("IN 아이즈원 콘서트", "우리 미미", "우리 딱지", "팬션 In 하와이", "", "", "", "", "", "")
+            mutableListOf("IN 아이즈원 콘서트", "우리 미미", "우리 딱지", "팬션 In 하와이")
         val contextList = mutableListOf(
             "오늘 아이즈원 콘서트 다녀왔어요!",
             "우리 고양이 미미에요. 오늘 같이 몰디브 다녀왔어요!!",
             "우리 고양이 딱지 입니다. 예쁘죠?",
-            "가리비,고기,소세지 꾸어 먹는중",
-            "", "", "", "", "", ""
+            "가리비,고기,소세지 꾸어 먹는중"
         )
         val titleList1 =
-            mutableListOf("맥주 한잔", "마카롱 with 미미", "커피 한잔", "악귀 In 하와이", "", "", "", "", "", "")
+            mutableListOf("맥주 한잔", "마카롱 with 미미", "커피 한잔", "악귀 In 하와이")
         val contextList1 = mutableListOf(
             "저녁에 시원한 맥주한잔",
             "몰디브에서 마카롱! 맛있네요",
             "여유롭게 커피한잔 In 이탈리아 카페",
-            "누워서 악귀 다시보기 보는중",
-            "", "", "", "", "", ""
+            "누워서 악귀 다시보기 보는중"
         )
         val imageUrlList =
-            mutableListOf("character2", "character7", "character11", "character1", "", "", "")
-        val imageUrlList1 = mutableListOf("day3", "day4", "day2", "day5", "", "", "")
-        val imageUrlList2 = mutableListOf("day7", "day8", "day6", "day1", "", "", "")
+            mutableListOf("character2", "character7", "character11", "character1")
+        val imageUrlList1 = mutableListOf("day3", "day4", "day2", "day5")
+        val imageUrlList2 = mutableListOf("day7", "day8", "day6", "day1")
         var my_profile =""
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -229,6 +226,18 @@ class MainActivity : AppCompatActivity() {
                     overridePendingTransition(R.anim.animation_in, R.anim.animation_out)
                 }
             }
+            nickList.add("")
+            nameList.add("")
+            mbtiList.add("")
+            statusList.add("")
+            imageUrlList.add("")
+            titleList.add("")
+            titleList1.add("")
+            contextList.add("")
+            contextList1.add("")
+            imageUrlList1.add("")
+            imageUrlList2.add("")
+            contentList.add("")
         }
     }
 
