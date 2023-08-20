@@ -128,7 +128,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/AProcess"
                     app:layout_constraintTop_toBottomOf="@+id/ADeadLine"
                     app:layout_constraintVertical_bias="0.5"
-                    android:progress="77"
+                    android:progress="48"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
@@ -227,7 +227,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/BProcess"
                     app:layout_constraintTop_toBottomOf="@+id/BDeadLine"
                     app:layout_constraintVertical_bias="0.5"
-                    android:progress="48"
+                    android:progress="37"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
@@ -327,7 +327,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/CProcess"
                     app:layout_constraintTop_toBottomOf="@+id/CDeadLine"
                     app:layout_constraintVertical_bias="0.5"
-                    android:progress="37"
+                    android:progress="77"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView

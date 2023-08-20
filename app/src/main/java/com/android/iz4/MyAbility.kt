@@ -11,9 +11,6 @@ import android.widget.ProgressBar
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 
-
-//(ViewBinding, Fragment, RecyclerView, Adapter는 사용하지 말아주세요.)
-//7777I에엙 그럼 뭘 사용해야하지
 class MyAbility : AppCompatActivity() {
     private lateinit var abilityresult: ActivityResultLauncher<Intent>
     private var progressnum = 0
@@ -21,7 +18,7 @@ class MyAbility : AppCompatActivity() {
     companion object {
         val titleList = mutableListOf(R.string.TAP, R.string.TBP, R.string.TCP)
         var progressnumList = mutableListOf("0", "0", "0")
-        val deadlinenumList = mutableListOf("0", "0", "0")
+        val deadlinenumList = mutableListOf("77", "48", "37")
         val MemoList1 = mutableListOf("", "", "", "", "", "", "", "", "", "")
         val MemoList2 = mutableListOf("", "", "", "", "", "", "", "", "", "")
         val MemoList3 = mutableListOf("", "", "", "", "", "", "", "", "", "")
