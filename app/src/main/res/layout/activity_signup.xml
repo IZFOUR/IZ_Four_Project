@@ -90,11 +90,10 @@
                     android:layout_height="wrap_content"
                     android:textColor="@drawable/btn_text"
                     android:background="@drawable/btn_shape"
-                    android:layout_gravity="end|top"
                     android:layout_marginEnd="20dp"
                     android:layout_weight="1"
                     android:text="@string/check"
-
+                    android:textSize="10sp"
                     />
 
             </LinearLayout>
