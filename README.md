@@ -222,3 +222,9 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 
 [FIX] : 🔧 08.20 pm08.20
 MainActivity에서 FriendEdit으로 데이터이동
+
+[FEAT] : ⚙️ 08.21 am 02:38
+1.MyPage의 프로필 사진 클릭 시 Url주소를 입력하면 사진 변경 가능
+2.MainActivity로 갔다가와도 편집된 사진 유지
+
+
