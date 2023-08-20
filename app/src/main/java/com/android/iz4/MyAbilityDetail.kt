@@ -50,7 +50,9 @@ class MyAbilityDetail : AppCompatActivity() {
         val mbd_deadline = intent.getStringExtra("abdeadline") ?:""
         text_title.text = title
 
+
         try {
+            ABarDeadline.progress = mbd_deadline.toInt()
             ABarProcess.progress = mbd_progress.toInt()
             if (progressnum < progressnum2) {
                 ABarDeadline.getProgressDrawable().setColorFilter(
@@ -67,7 +69,6 @@ class MyAbilityDetail : AppCompatActivity() {
             }
         } catch (e: Exception) {
             ABarProcess.progress =  progressnum
-
         }
 
         val abmemoList = intent.getStringArrayListExtra("abmemoList")
