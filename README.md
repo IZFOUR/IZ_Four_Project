@@ -208,3 +208,8 @@ FIX] : 🔧 MyAbility 프로그래스 기능 구현 연동
 
 [DOCS] : 📚 08.20 am 09:30
 1.한/영 string 번역 작업(xml)
+
+[FIX] : 🐛[DOCS] : 📚  08.20 am10:21
+1. ProcessPlus버튼을 누르지않고 memosave버튼을 누를때 랜덤 Activity로 이동되거나 앱이 종료되버리는 오류 해결
+2. try catch문을 이용한 예외처리 한곳만 했을때는 3~4번 클릭후 다시 재발해서 MyAbility,MyAbility 두곳다 예외처리해줌
+3. 자잘한 MyAbility 번역 
