@@ -46,7 +46,7 @@
                         android:id="@+id/tv_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Friend IZ * FOUR"
+                        android:text="@string/FRIEND_IZ_FOUR"
                         android:textColor="@color/Blue400"
                         android:textSize="35sp"
                         android:textStyle="bold" />
@@ -85,7 +85,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="-120dp"
-                        android:text="\t수정하려면 \n이미지를 클릭해주세요"
+                        android:text="@string/TOEDIT_CLICK_IMAGE"
                         android:gravity="center_vertical|center_horizontal"
                         android:textSize="13sp" />
 
