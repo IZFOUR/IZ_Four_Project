@@ -29,6 +29,7 @@
     <string name="MyTv_review2">(Day 3/4) The dog that became our family</string>
     <string name="MyTv_Today2">Duck\'s Information</string>
     <string name="Tv_MyPgDt">MyPageDetail</string>
+    <string name="MyAbility">MyAbility</string>
     <string name="MyIb_AddMemo">Save</string>
     <string name="MyTv_MyTtl">" Please enter the subject."</string>
     <string name="MyEt_MyStt">" Month/Day: Please write a brief description."</string>

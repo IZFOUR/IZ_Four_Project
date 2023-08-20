@@ -110,7 +110,7 @@ class FriendEdit : AppCompatActivity() {
                 setResult(RESULT_OK, intent)
                 finish()
             } else {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.No_Info), Toast.LENGTH_SHORT).show()
             }
         }
         val imgclick = findViewById<ImageView>(R.id.feprofile)
@@ -121,18 +121,18 @@ class FriendEdit : AppCompatActivity() {
 
     private fun dialog(imgView: ImageView) {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("URL을 입력 하세요.")
+        builder.setTitle(R.string.PL_URL)
 
         val inputEditText = EditText(this)
         builder.setView(inputEditText)
 
-        builder.setPositiveButton("확인") { dialog, which ->
+        builder.setPositiveButton(R.string.Check) { dialog, which ->
             imageUrl = inputEditText.text.toString()
             if (!imageUrl.isNullOrEmpty()) {
                 Picasso.get().load(imageUrl).error(R.drawable.question).into(imgView)
             }
         }
-        builder.setNegativeButton("취소") { dialog, which ->
+        builder.setNegativeButton(R.string.CCllt) { dialog, which ->
         }
         val dialog = builder.create()
         dialog.show()

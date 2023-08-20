@@ -38,6 +38,7 @@
     <string name="MyEt_MyDt">내용을 입력해주세요.</string>
     <string name="MyPage_MyPageTTL">MyPage</string>
     <string name="MyPage_MyPage">MyPage</string>
+    <string name="MyAbility">MyAbility</string>
     <string name="EdIt_IdError">올바른 이메일 주소를 입력하세요.</string>
     <string name="Available_Email">사용 가능한 아이디(이메일) 입니다.(다만, 이메일형식이 아닐시 가입이 불가합니다.)</string>
     <string name="EdIt_PwError">올바른 비밀번호를 입력하세요.(숫자,영문 최소1개 이상/총 8자이상).</string>
