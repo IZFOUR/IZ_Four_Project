@@ -18,7 +18,7 @@ class MyAbility : AppCompatActivity() {
     companion object {
         val titleList = mutableListOf(R.string.TAP, R.string.TBP, R.string.TCP)
         var progressnumList = mutableListOf("0", "0", "0")
-        val deadlinenumList = mutableListOf("77", "48", "37")
+        val deadlinenumList = mutableListOf("48", "37", "77")
         val MemoList1 = mutableListOf("", "", "", "", "", "", "", "", "", "")
         val MemoList2 = mutableListOf("", "", "", "", "", "", "", "", "", "")
         val MemoList3 = mutableListOf("", "", "", "", "", "", "", "", "", "")
