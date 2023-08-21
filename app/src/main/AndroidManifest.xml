@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+<!--   ▲ 인터넷 권한 추가-->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,16 +17,10 @@
             android:name=".FriendEdit"
             android:exported="false" />
         <activity
-            android:name=".MyPageDetail"
-            android:exported="false" />
-        <activity
             android:name=".MyAbilityDetail"
             android:exported="false" />
         <activity
             android:name=".MyAbility"
-            android:exported="false" />
-        <activity
-            android:name=".Friend"
             android:exported="false" />
         <activity
             android:name=".MyPage"

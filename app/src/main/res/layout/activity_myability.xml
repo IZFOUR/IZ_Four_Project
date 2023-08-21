@@ -4,23 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pastel"
     tools:context=".MyAbility">
+
     <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbar"
-        android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/Black"
-            android:textSize="20dp"
-            android:text="Test area">
-
-        </TextView>
+            android:gravity="center"
+            android:text="@string/My_Ability_IZ_FOUR"
+            android:textColor="@color/Blue400"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -59,7 +65,7 @@
                 android:id="@+id/Atoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"
@@ -71,9 +77,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="팀A 프로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:text="@string/TAP"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
                     tools:layout_editor_absoluteY="16dp">
@@ -85,10 +91,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:text="@string/TT_EDIT"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/Atoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Atoolbar"
-                    app:layout_constraintTop_toTopOf="parent"></Button>
+                    app:layout_constraintTop_toTopOf="parent"/>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -105,12 +113,12 @@
                     android:id="@+id/ADeadLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="마감"
+                    android:text="@string/TET_DDL"
                     app:layout_constraintBottom_toTopOf="@+id/ABarDeadLine"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
                     tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="29dp" />
+                    tools:layout_editor_absoluteX="32dp" />
 
                 <ProgressBar
                     android:id="@+id/ABarDeadLine"
@@ -120,13 +128,14 @@
                     app:layout_constraintBottom_toTopOf="@+id/AProcess"
                     app:layout_constraintTop_toBottomOf="@+id/ADeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="48"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
                     android:id="@+id/AProcess"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="진행"
+                    android:text="@string/TET_PGSS"
                     app:layout_constraintBottom_toTopOf="@+id/ABarProcess"
                     app:layout_constraintEnd_toEndOf="@+id/ADeadLine"
                     app:layout_constraintStart_toStartOf="@+id/ADeadLine"
@@ -157,7 +166,7 @@
                 android:id="@+id/Btoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"
@@ -169,24 +178,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="팀B 프로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:text="@string/TBP"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                </TextView>
+                    tools:layout_editor_absoluteY="16dp" />
 
                 <Button
                     android:id="@+id/BtoDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:text="@string/TT_EDIT"
+                    android:textColor="@drawable/btn_text"
+                    android:background="@drawable/btn_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/Btoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Btoolbar"
-                    app:layout_constraintTop_toTopOf="parent"></Button>
+                    app:layout_constraintTop_toTopOf="parent"/>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -203,7 +212,7 @@
                     android:id="@+id/BDeadLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="마감"
+                    android:text="@string/TET_DDL"
                     app:layout_constraintBottom_toTopOf="@+id/BBarDeadLine"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
@@ -218,13 +227,14 @@
                     app:layout_constraintBottom_toTopOf="@+id/BProcess"
                     app:layout_constraintTop_toBottomOf="@+id/BDeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="37"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
                     android:id="@+id/BProcess"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="진행"
+                    android:text="@string/TET_PGSS"
                     app:layout_constraintBottom_toTopOf="@+id/BBarProcess"
                     app:layout_constraintEnd_toEndOf="@+id/BDeadLine"
                     app:layout_constraintStart_toStartOf="@+id/BDeadLine"
@@ -250,25 +260,26 @@
             android:layout_height="175dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/Ctoolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="1dp">
+                tools:layout_editor_absoluteX="0dp">
 
                 <TextView
                     android:id="@+id/CName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="팀C 프로젝트"
-                    android:textColor="@color/Black"
-                    android:textSize="16dp"
+                    android:text="@string/TCP"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="146dp"
                     tools:layout_editor_absoluteY="16dp">
@@ -280,13 +291,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="4dp"
-                    android:text="세부사항"
+                    android:background="@drawable/btn_shape"
+                    android:text="@string/TT_EDIT"
+                    android:textColor="@drawable/btn_text"
                     app:layout_constraintBottom_toBottomOf="@+id/Ctoolbar"
                     app:layout_constraintEnd_toEndOf="@+id/Ctoolbar"
-                    app:layout_constraintTop_toTopOf="parent"></Button>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.appcompat.widget.Toolbar>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/CCase"
@@ -300,7 +312,7 @@
                     android:id="@+id/CDeadLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="마감"
+                    android:text="@string/TET_DDL"
                     app:layout_constraintBottom_toTopOf="@+id/CBarDeadLine"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
@@ -315,13 +327,14 @@
                     app:layout_constraintBottom_toTopOf="@+id/CProcess"
                     app:layout_constraintTop_toBottomOf="@+id/CDeadLine"
                     app:layout_constraintVertical_bias="0.5"
+                    android:progress="77"
                     tools:layout_editor_absoluteX="0dp" />
 
                 <TextView
                     android:id="@+id/CProcess"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="진행"
+                    android:text="@string/TET_PGSS"
                     app:layout_constraintBottom_toTopOf="@+id/CBarProcess"
                     app:layout_constraintEnd_toEndOf="@+id/CDeadLine"
                     app:layout_constraintStart_toStartOf="@+id/CDeadLine"
